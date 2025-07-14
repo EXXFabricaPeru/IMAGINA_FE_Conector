@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.ce.ebiz.com/" targetNamespace="http://ws.ce.ebiz.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://integrador.bizlinks.com.pe/integrador21/ws/invoker?wsdl=EBizGenericInvoker_schema2.xsd" />
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="Resumen" type="tns:Resumen" />
+  <xs:element name="documentResult" type="tns:documentResult" />
+  <xs:element name="ebizResponse" type="tns:ebizResponse" />
+  <xs:element name="invoke" type="tns:invoke" />
+  <xs:element name="invokeAnular" type="tns:invokeAnular" />
+  <xs:element name="invokeAnularResponse" type="tns:invokeAnularResponse" />
+  <xs:element name="invokeConsult" type="tns:invokeConsult" />
+  <xs:element name="invokeConsultResponse" type="tns:invokeConsultResponse" />
+  <xs:element name="invokeDeclare" type="tns:invokeDeclare" />
+  <xs:element name="invokeDeclareResponse" type="tns:invokeDeclareResponse" />
+  <xs:element name="invokeDocument" type="tns:invokeDocument" />
+  <xs:element name="invokeDocumentResponse" type="tns:invokeDocumentResponse" />
+  <xs:element name="invokePublish" type="tns:invokePublish" />
+  <xs:element name="invokePublishResponse" type="tns:invokePublishResponse" />
+  <xs:element name="invokeResponse" type="tns:invokeResponse" />
+  <xs:element name="invokeSummary" type="tns:invokeSummary" />
+  <xs:element name="invokeSummaryResponse" type="tns:invokeSummaryResponse" />
+  <xs:element name="receiveFile" type="tns:receiveFile" />
+  <xs:element name="receiveFileResponse" type="tns:receiveFileResponse" />
+  <xs:element name="replicateXml" type="tns:replicateXml" />
+  <xs:element name="replicateXmlResponse" type="tns:replicateXmlResponse" />
+  <xs:element name="sendDocument" type="tns:sendDocument" />
+  <xs:element name="sendDocumentResponse" type="tns:sendDocumentResponse" />
+  <xs:element name="sendSummary" type="tns:sendSummary" />
+  <xs:element name="sendSummaryResponse" type="tns:sendSummaryResponse" />
+  <xs:element name="updateAttachment" type="tns:updateAttachment" />
+  <xs:element name="updateAttachmentResponse" type="tns:updateAttachmentResponse" />
+  <xs:complexType name="Resumen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indicador" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="resumenId" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEmisionComprobante" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaGeneracionResumen" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="razonSocialEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="correoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="resumenTipo" type="xs:string" />
+      <xs:element minOccurs="0" name="inHabilitado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResumenItem" nillable="true" type="tns:ResumenItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResumenItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indicador" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroFila" type="xs:long" />
+      <xs:element minOccurs="0" name="tipoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoMoneda" type="xs:string" />
+      <xs:element minOccurs="0" name="serieDocumentoBaja" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoBaja" type="xs:string" />
+      <xs:element minOccurs="0" name="motivoBaja" type="xs:string" />
+      <xs:element minOccurs="0" name="serieGrupoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoFin" type="xs:string" />
+      <xs:element minOccurs="0" name="totalValorVentaOpGravadasConIgv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalValorVentaOpInafectasIgv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalValorVentaOpGratuitas" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalOtrosTributos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalIgv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalVenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalIsc" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalOtrosCargos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalValorVentaOpExoneradasIgv" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firmaInfoCliente" type="tns:eFirmaInfoCliente" />
+      <xs:element minOccurs="0" name="bean" type="tns:Documento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eFirmaInfoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="declararSunat" type="xs:string" />
+      <xs:element minOccurs="0" name="emisorId" type="xs:string" />
+      <xs:element minOccurs="0" name="estadoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="publicar" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Documento">
+    <xs:sequence>
+      <xs:element name="indicador" type="xs:string" />
+      <xs:element name="tipoDocumentoEmisor" type="xs:string" />
+      <xs:element name="numeroDocumentoEmisor" type="xs:string" />
+      <xs:element name="razonSocialEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreComercialEmisor" type="xs:string" />
+      <xs:element name="tipoDocumento" type="xs:string" />
+      <xs:element name="serieNumero" type="xs:string" />
+      <xs:element name="fechaEmision" type="xs:date" />
+      <xs:element minOccurs="0" name="fechaVencimiento" type="xs:date" />
+      <xs:element minOccurs="0" name="ubigeoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="urbanizacion" type="xs:string" />
+      <xs:element minOccurs="0" name="provinciaEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="departamentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="distritoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="paisEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="ubigeoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="urbanizacionAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="provinciaAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="departamentoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="distritoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="paisAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="correoEmisor" type="xs:string" />
+      <xs:element name="tipoDocumentoAdquiriente" type="xs:string" />
+      <xs:element name="numeroDocumentoAdquiriente" type="xs:string" />
+      <xs:element name="razonSocialAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="lugarDestino" type="xs:string" />
+      <xs:element minOccurs="0" name="correoAdquiriente" type="xs:string" />
+      <xs:element name="tipoMoneda" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoOperacionFactura" type="xs:string" />
+      <xs:element minOccurs="0" name="totalValorVentaNetoOpGravadas" type="xs:string" />
+      <xs:element minOccurs="0" name="totalValorVentaNetoOpNoGravada" type="xs:string" />
+      <xs:element minOccurs="0" name="totalValorVentaNetoOpExoneradas" type="xs:string" />
+      <xs:element minOccurs="0" name="totalValorVentaNetoOpGratuitas" type="xs:string" />
+      <xs:element minOccurs="0" name="totalFondoInclusionSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="descuentosGlobales" type="xs:string" />
+      <xs:element minOccurs="0" name="subTotal" type="xs:string" />
+      <xs:element minOccurs="0" name="totalIgv" type="xs:string" />
+      <xs:element minOccurs="0" name="totalIsc" type="xs:string" />
+      <xs:element minOccurs="0" name="totalOtrosTributos" type="xs:string" />
+      <xs:element minOccurs="0" name="totalOtrosCargos" type="xs:string" />
+      <xs:element minOccurs="0" name="totalDescuentos" type="xs:string" />
+      <xs:element minOccurs="0" name="totalVenta" type="xs:string" />
+      <xs:element minOccurs="0" name="totalPercepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="baseImponiblePercepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="totalVentaConPercepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoReferenciaPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoReferenciaCorregido" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaCorregido" type="xs:string" />
+      <xs:element minOccurs="0" name="motivoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="serieNumeroAfectado" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSerieNumeroAfectado" type="xs:string" />
+      <xs:element minOccurs="0" name="inHabilitado" type="xs:string" />
+      <xs:element minOccurs="0" name="porcentajePercepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="totalRetencion" type="xs:string" />
+      <xs:element minOccurs="0" name="porcentajeRetencion" type="xs:string" />
+      <xs:element minOccurs="0" name="totalDetraccion" type="xs:string" />
+      <xs:element minOccurs="0" name="porcentajeDetraccion" type="xs:string" />
+      <xs:element minOccurs="0" name="valorReferencialDetraccion" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionDetraccion" type="xs:string" />
+      <xs:element minOccurs="0" name="totalBonificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="ubigeoDireccionPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionCompletaPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="urbanizacionPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="provinciaPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="departamentoPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="distritoPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="paisPtoPartida" type="xs:string" />
+      <xs:element minOccurs="0" name="ubigeoDireccionPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionCompletaPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="urbanizacionPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="provinciaPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="departamentoPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="distritoPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="paisPtoLlegada" type="xs:string" />
+      <xs:element minOccurs="0" name="marcaVehiculo" type="xs:string" />
+      <xs:element minOccurs="0" name="placaVehiculo" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroConstanciaVehiculo" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroLicenciaConducir" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRucTransportista" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRucTransportistaCuenta" type="xs:string" />
+      <xs:element minOccurs="0" name="razonSocialTransportista" type="xs:string" />
+      <xs:element minOccurs="0" name="ubigeoLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="urbanizacionLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="provinciaLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="departamentoLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="distritoLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="paisLugarEntrega" type="xs:string" />
+      <xs:element minOccurs="0" name="modalidadTransporte" type="xs:string" />
+      <xs:element minOccurs="0" name="totalPesoBruto" type="xs:decimal" />
+      <xs:element name="unidadMedidaPesoBruto" type="xs:string" />
+      <xs:element minOccurs="0" name="placaVehiculoRenta" type="xs:string" />
+      <xs:element minOccurs="0" name="matriculaEmbarcacion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEmbarcacion" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionEspecieVendida" type="xs:string" />
+      <xs:element minOccurs="0" name="lugarDescarga" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaDescarga" type="xs:date" />
+      <xs:element minOccurs="0" name="montoReferencial" type="xs:string" />
+      <xs:element minOccurs="0" name="montoReferencialPreliminar" type="xs:string" />
+      <xs:element minOccurs="0" name="factorRetornoViaje" type="xs:string" />
+      <xs:element minOccurs="0" name="puntoOrigenViaje" type="xs:string" />
+      <xs:element minOccurs="0" name="puntoDestinoViaje" type="xs:string" />
+      <xs:element minOccurs="0" name="cargaEfectivaVehiculo" type="xs:decimal" />
+      <xs:element name="unidadMedidaCargaEfectiva" type="xs:string" />
+      <xs:element minOccurs="0" name="montoReferencialVehiculo" type="xs:string" />
+      <xs:element minOccurs="0" name="configuracionVehicular" type="xs:string" />
+      <xs:element minOccurs="0" name="cargaUtilTnVehiculo" type="xs:decimal" />
+      <xs:element name="unidadMedidaCargaUtilTn" type="xs:string" />
+      <xs:element minOccurs="0" name="montoReferencialTM" type="xs:string" />
+      <xs:element minOccurs="0" name="ordenCompra" type="xs:string" />
+      <xs:element minOccurs="0" name="monto1" type="xs:string" />
+      <xs:element minOccurs="0" name="monto2" type="xs:string" />
+      <xs:element minOccurs="0" name="monto3" type="xs:string" />
+      <xs:element minOccurs="0" name="monto4" type="xs:string" />
+      <xs:element minOccurs="0" name="monto5" type="xs:string" />
+      <xs:element minOccurs="0" name="totalDocumentoAnticipo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferencia_1" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferencia_1" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferencia_2" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferencia_2" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferencia_3" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferencia_3" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferencia_4" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferencia_4" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferencia_5" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferencia_5" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferenciaAdicional_1" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaAdicional_1" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferenciaAdicional_2" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaAdicional_2" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferenciaAdicional_3" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaAdicional_3" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferenciaAdicional_4" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaAdicional_4" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoReferenciaAdicional_5" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoReferenciaAdicional_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_11" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_11" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_11" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_12" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_12" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_12" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_13" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_13" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_13" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_14" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_14" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_14" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_15" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_15" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_15" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_16" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_16" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_16" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_17" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_17" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_17" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_18" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_18" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_18" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_19" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_19" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_19" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLeyenda_20" type="xs:string" />
+      <xs:element minOccurs="0" name="textoLeyenda_20" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAdicionalLeyenda_20" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreAdjunto_1" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreAdjunto_2" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreAdjunto_3" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreAdjunto_4" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreAdjunto_5" type="xs:string" />
+      <xs:element minOccurs="0" name="adjunto_1" type="xs:string" />
+      <xs:element minOccurs="0" name="adjunto_2" type="xs:string" />
+      <xs:element minOccurs="0" name="adjunto_3" type="xs:string" />
+      <xs:element minOccurs="0" name="adjunto_4" type="xs:string" />
+      <xs:element minOccurs="0" name="adjunto_5" type="xs:string" />
+      <xs:element minOccurs="0" name="rutaAdjunto_1" type="xs:string" />
+      <xs:element minOccurs="0" name="rutaAdjunto_2" type="xs:string" />
+      <xs:element minOccurs="0" name="rutaAdjunto_3" type="xs:string" />
+      <xs:element minOccurs="0" name="rutaAdjunto_4" type="xs:string" />
+      <xs:element minOccurs="0" name="rutaAdjunto_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_11" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_11" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_12" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_12" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_13" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_13" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_14" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_14" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_15" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_15" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_16" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_16" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_17" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_17" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_18" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_18" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_19" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_19" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_20" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_20" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_11" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_11" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_12" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_12" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_13" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_13" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_14" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_14" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_15" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_15" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_16" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_16" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_17" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_17" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_18" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_18" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_19" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_19" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_20" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_20" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_21" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_21" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_22" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_22" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_23" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_23" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_24" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_24" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_25" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_25" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoLocalAnexoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="serieNumeroFGT" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoDocumentoFGT" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoFGT" type="xs:string" />
+      <xs:element minOccurs="0" name="numIdentidadRemitenteFGT" type="xs:string" />
+      <xs:element minOccurs="0" name="numDocIdentDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocIdentDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="razonSocialDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="motivoTrasladoBienes" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaTrasladoBienes" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoTransportista" type="xs:string" />
+      <xs:element minOccurs="0" name="numDocIdentConductor" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocIdentConductor" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="tns:Item" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="referencia" nillable="true" type="tns:DocumentoReferencia" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="anticipo" nillable="true" type="tns:EDocumentoAnticipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Item">
+    <xs:sequence>
+      <xs:element name="indicador" type="xs:string" />
+      <xs:element name="numeroOrdenItem" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoProducto" type="xs:string" />
+      <xs:element name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="cantidad" type="xs:string" />
+      <xs:element name="unidadMedida" type="xs:string" />
+      <xs:element minOccurs="0" name="importeUnitarioSinImpuesto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="importeUnitarioConImpuesto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="codigoImporteUnitarioConImpuesto" type="xs:string" />
+      <xs:element minOccurs="0" name="importeTotalSinImpuesto" type="xs:string" />
+      <xs:element minOccurs="0" name="importeDescuento" type="xs:string" />
+      <xs:element minOccurs="0" name="importeCargo" type="xs:string" />
+      <xs:element name="codigoRazonExoneracion" type="xs:string" />
+      <xs:element minOccurs="0" name="importeIgv" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoSistemaImpuestoISC" type="xs:string" />
+      <xs:element minOccurs="0" name="importeIsc" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoImporteReferencial" type="xs:string" />
+      <xs:element minOccurs="0" name="importeReferencial" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar100_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar100_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar40_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar40_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_5" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_6" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_6" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_7" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_8" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_8" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_9" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_9" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar250_10" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar250_10" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_1" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_1" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_2" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_2" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_3" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_3" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_4" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_4" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoAuxiliar500_5" type="xs:string" />
+      <xs:element minOccurs="0" name="textoAuxiliar500_5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentoReferencia">
+    <xs:sequence>
+      <xs:element name="indicador" type="xs:string" />
+      <xs:element name="tipoDocumentoReferencia" type="xs:string" />
+      <xs:element name="numeroDocumentoReferencia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EDocumentoAnticipo">
+    <xs:sequence>
+      <xs:element name="indicador" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoEmisorAnticipo" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoEmisorAnticipo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoAnticipo" type="xs:string" />
+      <xs:element minOccurs="0" name="serieNumeroDocumentoAnticipo" type="xs:string" />
+      <xs:element minOccurs="0" name="totalPrepagadoAnticipo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeAnular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="parametroInfoCliente" type="tns:eParametrosInfoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eParametrosInfoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correlativoExcluir" type="xs:string" />
+      <xs:element minOccurs="0" name="estadoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="idOrigen" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoFin" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="serieGrupoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoEmisor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firmaInfoCliente" type="tns:eFirmaInfoCliente" />
+      <xs:element minOccurs="0" name="resumen" type="tns:Resumen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="replicateXmlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeDeclare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="parametroInfoCliente" type="tns:eParametrosInfoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:documentResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="typeDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="idDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="statusDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="statusSunat" type="xs:string" />
+      <xs:element minOccurs="0" name="signTime" type="xs:string" />
+      <xs:element minOccurs="0" name="declareTime" type="xs:string" />
+      <xs:element minOccurs="0" name="responseTime" type="xs:string" />
+      <xs:element minOccurs="0" name="signatureValue" type="xs:string" />
+      <xs:element minOccurs="0" name="emisionTime" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" name="messageSunat" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns:message" />
+      <xs:element minOccurs="0" name="hashCode" type="xs:string" />
+      <xs:element minOccurs="0" name="barCodeFileUrl" type="xs:string" />
+      <xs:element minOccurs="0" name="pdfFileUrl" type="xs:string" />
+      <xs:element minOccurs="0" name="xmlFileSignUrl" type="xs:string" />
+      <xs:element minOccurs="0" name="xmlFileSunatUrl" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumentoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="razonSocialAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="razonSocialEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="adicionales" type="tns:adicionales" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="tns:Item1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codeStatus" type="xs:string" />
+      <xs:element minOccurs="0" name="descriptionStatus" type="xs:string" />
+      <xs:element minOccurs="0" name="codeDetail" type="xs:string" />
+      <xs:element minOccurs="0" name="descriptionDetail" type="xs:string" />
+      <xs:element minOccurs="0" name="listDetail" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Item1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroOrdenItem" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoProducto" type="xs:string" />
+      <xs:element minOccurs="0" name="adicionales" type="tns:adicionales" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeConsult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="consultaInfo" type="tns:eConsulta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eConsulta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estadoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="estadoSunat" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFirmaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFirmaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoFin" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCorrelativoInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumentoAdquiriente" type="xs:string" />
+      <xs:element minOccurs="0" name="serieGrupoDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokePublishResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:defaultResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="defaultResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns:message" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="statusDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="xmlText" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receiveFileResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="sendDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeAnularResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:defaultResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="replicateXml">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="command" type="xs:string" />
+      <xs:element minOccurs="0" name="xmlSunat" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="adjuntos" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ebizResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="genericInvokeResponse" type="tns:genericInvokeResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="genericInvokeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commonResponse" type="tns:commonResponse" />
+      <xs:element minOccurs="0" name="xmlResult" type="tns:xmlResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="commonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="summaryResult" type="tns:summaryResult" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="descriptionStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns:message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="summaryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="total" type="xs:int" />
+      <xs:element minOccurs="0" name="totalError" type="xs:int" />
+      <xs:element minOccurs="0" name="totalQueued" type="xs:int" />
+      <xs:element minOccurs="0" name="totalSign" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="xmlResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="document" nillable="true" type="tns:documentResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:documentResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firmaInfoCliente" type="tns:eFirmaInfoCliente" />
+      <xs:element minOccurs="0" name="documento" type="tns:Documento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeDeclareResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:defaultResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokeConsultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:consultResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentResults" nillable="true" type="tns:documentResult" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="statusDescription" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invokePublish">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="parametroInfoCliente" type="tns:eParametrosInfoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invoke">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="command" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firmaInfoCliente" type="tns:eFirmaInfoCliente" />
+      <xs:element minOccurs="0" name="bean" type="tns:Resumen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receiveFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="zipFile" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nameLegado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="adicionales">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="adicional" nillable="true" type="tns:adicional" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="adicional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adjuntoCliente" type="tns:eAdjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eAdjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attachment" type="tns:Attachment" />
+      <xs:element minOccurs="0" name="idEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="serieCorrelativo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="data" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAttachmentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:defaultResult" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

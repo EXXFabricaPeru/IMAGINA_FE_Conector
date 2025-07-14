@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.ce.ebiz.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.ce.ebiz.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://integrador.bizlinks.com.pe/integrador21/ws/invoker?wsdl=EBizGenericInvoker_schema1.xsd" namespace="http://ws.ce.ebiz.com/" />
+    </xsd:schema>
+  </types>
+  <message name="invoke">
+    <part name="parameters" element="tns:invoke" />
+  </message>
+  <message name="invokeDeclare">
+    <part name="parameters" element="tns:invokeDeclare" />
+  </message>
+  <message name="invokeAnularResponse">
+    <part name="parameters" element="tns:invokeAnularResponse" />
+  </message>
+  <message name="invokeDocumentResponse">
+    <part name="parameters" element="tns:invokeDocumentResponse" />
+  </message>
+  <message name="invokeConsultResponse">
+    <part name="parameters" element="tns:invokeConsultResponse" />
+  </message>
+  <message name="invokeAnular">
+    <part name="parameters" element="tns:invokeAnular" />
+  </message>
+  <message name="sendSummaryResponse">
+    <part name="parameters" element="tns:sendSummaryResponse" />
+  </message>
+  <message name="invokeDeclareResponse">
+    <part name="parameters" element="tns:invokeDeclareResponse" />
+  </message>
+  <message name="invokeDocument">
+    <part name="parameters" element="tns:invokeDocument" />
+  </message>
+  <message name="receiveFile">
+    <part name="parameters" element="tns:receiveFile" />
+  </message>
+  <message name="invokeResponse">
+    <part name="parameters" element="tns:invokeResponse" />
+  </message>
+  <message name="sendDocumentResponse">
+    <part name="parameters" element="tns:sendDocumentResponse" />
+  </message>
+  <message name="replicateXml">
+    <part name="parameters" element="tns:replicateXml" />
+  </message>
+  <message name="invokeSummaryResponse">
+    <part name="parameters" element="tns:invokeSummaryResponse" />
+  </message>
+  <message name="replicateXmlResponse">
+    <part name="parameters" element="tns:replicateXmlResponse" />
+  </message>
+  <message name="sendDocument">
+    <part name="parameters" element="tns:sendDocument" />
+  </message>
+  <message name="invokePublish">
+    <part name="parameters" element="tns:invokePublish" />
+  </message>
+  <message name="invokeConsult">
+    <part name="parameters" element="tns:invokeConsult" />
+  </message>
+  <message name="Exception_Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="invokeSummary">
+    <part name="parameters" element="tns:invokeSummary" />
+  </message>
+  <message name="receiveFileResponse">
+    <part name="parameters" element="tns:receiveFileResponse" />
+  </message>
+  <message name="updateAttachmentResponse">
+    <part name="parameters" element="tns:updateAttachmentResponse" />
+  </message>
+  <message name="sendSummary">
+    <part name="parameters" element="tns:sendSummary" />
+  </message>
+  <message name="invokePublishResponse">
+    <part name="parameters" element="tns:invokePublishResponse" />
+  </message>
+  <message name="updateAttachment">
+    <part name="parameters" element="tns:updateAttachment" />
+  </message>
+  <portType name="EBizGenericInvoker">
+    <operation name="invokeConsult">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeConsultRequest" message="tns:invokeConsult" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeConsultResponse" message="tns:invokeConsultResponse" />
+    </operation>
+    <operation name="invokeDocument">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeDocumentRequest" message="tns:invokeDocument" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeDocumentResponse" message="tns:invokeDocumentResponse" />
+    </operation>
+    <operation name="sendSummary">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/sendSummaryRequest" message="tns:sendSummary" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/sendSummaryResponse" message="tns:sendSummaryResponse" />
+    </operation>
+    <operation name="invoke">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeRequest" message="tns:invoke" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeResponse" message="tns:invokeResponse" />
+    </operation>
+    <operation name="receiveFile">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/receiveFileRequest" message="tns:receiveFile" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/receiveFileResponse" message="tns:receiveFileResponse" />
+      <fault ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/receiveFile/Fault/Exception_Exception" name="Exception_Exception" message="tns:Exception_Exception" />
+    </operation>
+    <operation name="replicateXml">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/replicateXmlRequest" message="tns:replicateXml" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/replicateXmlResponse" message="tns:replicateXmlResponse" />
+    </operation>
+    <operation name="invokeDeclare">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeDeclareRequest" message="tns:invokeDeclare" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeDeclareResponse" message="tns:invokeDeclareResponse" />
+    </operation>
+    <operation name="invokeSummary">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeSummaryRequest" message="tns:invokeSummary" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeSummaryResponse" message="tns:invokeSummaryResponse" />
+    </operation>
+    <operation name="sendDocument">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/sendDocumentRequest" message="tns:sendDocument" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/sendDocumentResponse" message="tns:sendDocumentResponse" />
+    </operation>
+    <operation name="invokeAnular">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeAnularRequest" message="tns:invokeAnular" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokeAnularResponse" message="tns:invokeAnularResponse" />
+    </operation>
+    <operation name="invokePublish">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokePublishRequest" message="tns:invokePublish" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/invokePublishResponse" message="tns:invokePublishResponse" />
+    </operation>
+    <operation name="updateAttachment">
+      <input ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/updateAttachmentRequest" message="tns:updateAttachment" />
+      <output ns1:Action="http://ws.ce.ebiz.com/EBizGenericInvoker/updateAttachmentResponse" message="tns:updateAttachmentResponse" />
+    </operation>
+  </portType>
+</definitions>
