@@ -1,0 +1,65 @@
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\AddonFE.exe.config
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\AddonFE.exe
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\AddonFE.pdb
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\Newtonsoft.Json.dll
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\SAPBusinessOneSDK.dll
+C:\SMC\SMC\AddonFE\AddonFE\bin\x64\Debug\Newtonsoft.Json.xml
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.csproj.AssemblyReference.cache
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.Properties.Resources.resources
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.csproj.GenerateResource.cache
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.csproj.CoreCompileInputs.cache
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.csproj.Up2Date
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.exe
+C:\SMC\SMC\AddonFE\AddonFE\obj\x64\Debug\AddonFE.pdb
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe.config
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.pdb
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.dll
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\SAPBusinessOneSDK.dll
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.xml
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.AssemblyReference.cache
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.Properties.Resources.resources
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.GenerateResource.cache
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.CoreCompileInputs.cache
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.Up2Date
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.exe
+C:\SMC\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.pdb
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe.config
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.pdb
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.dll
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\SAPBusinessOneSDK.dll
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.xml
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.AssemblyReference.cache
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.Properties.Resources.resources
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.GenerateResource.cache
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.CoreCompileInputs.cache
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.Up2Date
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.exe
+C:\SMC\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.pdb
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe.config
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.pdb
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\SAPBusinessOneSDK.dll
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.AssemblyReference.cache
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.Properties.Resources.resources
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.GenerateResource.cache
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.CoreCompileInputs.cache
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.Up2Date
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.exe
+C:\Users\Consultor6\Desktop\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.pdb
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe.config
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.exe
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\AddonFE.pdb
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.dll
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\SAPBusinessOneSDK.dll
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\bin\x64\Debug\Newtonsoft.Json.xml
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.AssemblyReference.cache
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.Properties.Resources.resources
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.GenerateResource.cache
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.CoreCompileInputs.cache
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.csproj.Up2Date
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.exe
+C:\EXX_DEV\Addon Conector FE\IMAGINA-AddonFE-main\AddonFE\obj\x64\Debug\AddonFE.pdb

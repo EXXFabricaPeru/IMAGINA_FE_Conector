@@ -1,0 +1,3530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SMC_ActualizarEstadoFE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ActualizarEstadoFE" 
+(
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN MensajeError varchar(150),
+	IN Estado varchar(150)
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	DECLARE EstadoFE VARCHAR(10);
+	
+	SELECT 
+	(CASE 
+		WHEN Estado='AC_03' THEN '02'
+		WHEN Estado='RC_05' THEN '03'
+		WHEN Estado='PE_02' THEN '01'
+		WHEN Estado='01' THEN '01'
+		ELSE '00'
+	 END )into  EstadoFE
+	FROM dummy;
+	
+	IF ObjectType='13' THEN
+		UPDATE "OINV" SET 
+		"U_SMC_MSJ_ESTADO_FE"=MensajeError,
+		"U_SMC_ESTADO_FE"=EstadoFE
+		WHERE "DocEntry"=DocEntry;
+	ELSE 
+		IF ObjectType='14' THEN
+			UPDATE "ORIN" SET 
+			"U_SMC_MSJ_ESTADO_FE"=MensajeError,
+			"U_SMC_ESTADO_FE"=EstadoFE
+			WHERE "DocEntry"=DocEntry;
+		ELSE 
+			IF ObjectType='15' THEN
+				UPDATE "ODLN" SET 
+				"U_SMC_MSJ_ESTADO_GRE"=MensajeError,
+				"U_SMC_ESTADO_GRE"=EstadoFE
+				WHERE "DocEntry"=DocEntry;
+			ELSE
+				IF ObjectType='46'  THEN
+					UPDATE "OVPM" SET 
+					"U_SMC_MSJ_ESTADO_FE"=MensajeError,
+					"U_SMC_ESTADO_FE"=EstadoFE
+					WHERE "DocEntry"=DocEntry;
+				ELSE
+					IF ObjectType='203'  THEN
+						UPDATE "ODPI" SET 
+						"U_SMC_MSJ_ESTADO_FE"=MensajeError,
+						"U_SMC_ESTADO_FE"=EstadoFE
+						WHERE "DocEntry"=DocEntry;
+					END IF;
+				END IF;
+			END IF;
+		END IF;
+	END IF;
+	
+
+END;</value>
+  </data>
+  <data name="SMC_Actualizar_FELFolioPrefNumFactAnt" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Actualizar_FELFolioPrefNumFactAnt" 
+(
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	DECLARE SP_SerieNameOINV,SP_SerieNameODPI,FolioPref varchar(15);
+	declare SP_FolioNumOINV,SP_FolioNumODPI,FolioNum INTEGER;
+
+	FolioNum:=0;
+	
+	--OBTENIENDO LA SERIE
+	SELECT T1."SeriesName" into SP_SerieNameODPI FROM "ODPI" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T0."DocEntry"=DocEntry;
+	
+	SELECT SUBSTRING(SP_SerieNameODPI, 1, 4) into FolioPref 
+	FROM DUMMY;
+	--OBTENIENDO LA SERIE
+
+
+	--OBTENIENDO EL CORRELATIVO
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumODPI FROM "OINV" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameODPI;
+	
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumOINV FROM "ODPI" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameODPI;
+	
+	
+	IF SP_FolioNumODPI&gt;=SP_FolioNumOINV THEN
+		FolioNum:=SP_FolioNumODPI;
+	END IF;
+	
+	IF SP_FolioNumOINV &gt; SP_FolioNumODPI THEN
+		FolioNum:=SP_FolioNumOINV;
+	END IF;
+	
+	
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+/*
+	declare Serie varchar(15);
+	declare FolioPref varchar(10);
+	declare FolioNum varchar(10);
+
+
+	SELECT "Series" INTO Serie  FROM "ODPI" WHERE "DocEntry" = :DocEntry;
+	SELECT "FolioPref" INTO FolioPref FROM NNM1 WHERE "Series" = :Serie ;
+	SELECT IFNULL(MAX("FolioNum") + 1, '0')  INTO FolioNum FROM "ODPI" WHERE "Series" = :Serie;
+	IF (:FolioNum = '0') THEN 
+		SELECT "NextFolio"  INTO FolioNum FROM NNM1 WHERE "Series" = :Serie;
+	END IF;
+	
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+*/
+
+END;</value>
+  </data>
+  <data name="SMC_Actualizar_FELFolioPrefNumGUIA" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Actualizar_FELFolioPrefNumGUIA" 
+(
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	DECLARE SP_SerieNameODLN,SP_SerieNameOWTR,SP_SerieNameOIGE,SP_SerieNameORPD,FolioPref varchar(15) DEFAULT '';
+	declare SP_FolioNumODLN,SP_FolioNumOWTR,SP_FolioNumOIGE,SP_FolioNumORPD,FolioNum INTEGER DEFAULT 0;
+	create local temporary table #TablaDatos (
+		"CORRELATIVO" INTEGER);
+	FolioNum:=0;
+	
+	--OBTENIENDO LA SERIE
+	 IF ObjectType='15' THEN 
+		SP_SerieNameODLN:=IFNULL((SELECT IFNULL(T1."SeriesName",'') FROM "ODLN" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T0."DocEntry"=DocEntry),'');
+		
+		SP_FolioNumODLN:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ODLN" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameODLN),1);
+		
+		--COMPARACION CON LAS DEMAS TABLAS
+		SP_FolioNumOWTR:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OWTR" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameODLN),1);
+		
+		SP_FolioNumOIGE:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OIGE" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameODLN),1);
+		
+		SP_FolioNumORPD:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ORPD" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameODLN),1);
+		
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES(SP_FolioNumODLN);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOWTR);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOIGE);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumORPD);
+	END IF;
+	 
+	 IF ObjectType='67' THEN 
+		SP_SerieNameOWTR:=IFNULL((SELECT T1."SeriesName"  FROM "OWTR" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T0."DocEntry"=DocEntry),'');
+		
+		
+		SP_FolioNumOWTR:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OWTR" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOWTR),1);
+		
+		--COMPARACION CON LAS DEMAS TABLAS
+		SP_FolioNumODLN:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ODLN" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOWTR),1);
+		
+		SP_FolioNumOIGE:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OIGE" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOWTR),1);
+		
+		SP_FolioNumORPD:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ORPD" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOWTR),1);
+		
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOWTR);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumODLN);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOIGE);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumORPD);
+	 END IF;
+		
+		
+	 IF ObjectType='60' THEN 
+		SP_SerieNameOIGE:=IFNULL((SELECT T1."SeriesName"  FROM "OIGE" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T0."DocEntry"=DocEntry),'');
+		
+		
+		SP_FolioNumOIGE:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OIGE" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOIGE),1);
+		
+		--COMPARACION CON LAS DEMAS TABLAS
+		SP_FolioNumODLN:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ODLN" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOIGE),1);
+		
+		SP_FolioNumOWTR:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OWTR" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOIGE),1);
+		
+		SP_FolioNumORPD:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ORPD" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameOIGE),1);
+		
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOWTR);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumODLN);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOIGE);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumORPD);
+	 END IF;
+		
+	 IF ObjectType='21' THEN 
+		SP_SerieNameORPD:=IFNULL((SELECT T1."SeriesName"  FROM "ORPD" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T0."DocEntry"=DocEntry),'');
+		
+		
+		SP_FolioNumORPD:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ORPD" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameORPD),1);
+		
+		--COMPARACION CON LAS DEMAS TABLAS
+		SP_FolioNumODLN:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "ODLN" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameORPD),1);
+		
+		SP_FolioNumOWTR:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OWTR" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameORPD),1);
+		
+		SP_FolioNumOIGE:=IFNULL((SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) FROM "OIGE" T0 
+		INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+		WHERE T1."SeriesName"=SP_SerieNameORPD),1);
+		
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOWTR);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumODLN);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumOIGE);
+		INSERT INTO #TablaDatos("CORRELATIVO") VALUES (SP_FolioNumORPD);
+	 END IF;
+		
+	FolioPref:='T001';
+	
+	
+	
+	--OBTENIENDO LA SERIE
+
+
+	--OBTENIENDO EL CORRELATIVO
+	
+	FolioNum:=SP_FolioNumODLN;
+	/*
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumODPI FROM "ODPI" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameOINV;
+	
+	IF SP_FolioNumOINV&gt;=SP_FolioNumODPI THEN
+		FolioNum:=SP_FolioNumOINV;
+	END IF;
+	
+	IF SP_FolioNumODPI &gt; SP_FolioNumOINV THEN
+		FolioNum:=SP_FolioNumODPI;
+	END IF;
+	*/
+	select  MAX("CORRELATIVO") into FolioNum from #TablaDatos;
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+	DROP TABLE  #TablaDatos;
+END;</value>
+  </data>
+  <data name="SMC_Actualizar_FELFolioPrefNumOINV" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Actualizar_FELFolioPrefNumOINV" 
+(
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	DECLARE SP_SerieNameOINV,SP_SerieNameODPI,FolioPref varchar(15);
+	declare SP_FolioNumOINV,SP_FolioNumODPI,FolioNum INTEGER;
+
+	FolioNum:=0;
+	
+	--OBTENIENDO LA SERIE
+	SELECT T1."SeriesName" into SP_SerieNameOINV FROM "OINV" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T0."DocEntry"=DocEntry;
+	
+	SELECT SUBSTRING(SP_SerieNameOINV, 1, 4) into FolioPref 
+	FROM DUMMY;
+	--OBTENIENDO LA SERIE
+
+
+	--OBTENIENDO EL CORRELATIVO
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumOINV FROM "OINV" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameOINV AND T0."Indicator" IN (TipoDoc,'AN');
+	
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumODPI FROM "ODPI" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameOINV AND T0."Indicator" IN (TipoDoc,'AN');
+	
+	
+	IF SP_FolioNumOINV&gt;=SP_FolioNumODPI THEN
+		FolioNum:=SP_FolioNumOINV;
+	END IF;
+	
+	IF SP_FolioNumODPI &gt; SP_FolioNumOINV THEN
+		FolioNum:=SP_FolioNumODPI;
+	END IF;
+	
+	/*
+	declare Serie,SP_SeriesNameOINV varchar(15);
+	declare FolioPref,FolioPrefODPI varchar(10);
+	declare FolioNum,FolioNumODPI INTEGER;
+
+
+	SELECT "Series" INTO Serie  FROM OINV WHERE "DocEntry" = :DocEntry;
+	SELECT "FolioPref","SeriesName" INTO FolioPref,SP_SeriesNameOINV FROM NNM1 WHERE "Series" = :Serie ;
+	
+	--OBTENER FOLIO DE FACTURA ANTICIPO
+	SELECT IFNULL(MAX("FolioNum") + 1, 1) into FolioNumODPI FROM "ODPI" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SeriesNameOINV;
+	--END OBTENER FOLIO DE FACTURA ANTICIPO
+
+
+	SELECT IFNULL(MAX("FolioNum") + 1, 1)  INTO FolioNum FROM OINV WHERE "Series" = :Serie;
+	
+	IF TO_INTEGER(FolioNumODPI)&gt;= TO_INTEGER(FolioNum) THEN
+		FolioNum:=FolioNumODPI;
+	END IF;
+	
+	
+	IF (:FolioNum = '0') THEN 
+		SELECT "NextFolio"  INTO FolioNum FROM NNM1 WHERE "Series" = :Serie;
+	END IF;
+	*/
+	
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+
+END;</value>
+  </data>
+  <data name="SMC_Actualizar_FELFolioPrefNumORIN" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Actualizar_FELFolioPrefNumORIN" 
+(
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	DECLARE SP_SerieNameORIN,FolioPref varchar(15);
+	declare SP_FolioNumORIN,FolioNum INTEGER;
+
+	FolioNum:=0;
+	
+	--OBTENIENDO LA SERIE
+	SELECT T1."SeriesName" into SP_SerieNameORIN FROM "ORIN" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T0."DocEntry"=DocEntry;
+	
+	SELECT SUBSTRING(SP_SerieNameORIN, 1, 4) into FolioPref 
+	FROM DUMMY;
+	--OBTENIENDO LA SERIE
+
+
+	--OBTENIENDO EL CORRELATIVO
+	SELECT IFNULL(MAX(IFNULL(T0."FolioNum",0)) + 1, 1) into SP_FolioNumORIN FROM "ORIN" T0 
+	INNER JOIN "NNM1" T1 ON T0."Series"=T1."Series"
+	WHERE T1."SeriesName"=SP_SerieNameORIN;
+	
+	
+	FolioNum:=SP_FolioNumORIN;
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+
+
+
+/*
+	declare Serie varchar(15);
+	declare FolioPref varchar(10);
+	declare FolioNum varchar(10);
+
+
+	SELECT "Series" INTO Serie  FROM "ORIN" WHERE "DocEntry" = :DocEntry;
+	SELECT "FolioPref" INTO FolioPref FROM "NNM1" WHERE "Series" = :Serie ;
+	
+	SELECT IFNULL(MAX("FolioNum") + 1, '0')  INTO FolioNum FROM "ORIN" WHERE "Series" = :Serie;
+	IF (:FolioNum = '0') THEN 
+		SELECT "NextFolio"  INTO FolioNum FROM NNM1 WHERE "Series" = :Serie;
+	END IF;
+	
+	SELECT FolioPref AS "FolioPref", :FolioNum AS "FolioNum" FROM DUMMY;
+*/
+END;</value>
+  </data>
+  <data name="SMC_ANULACION_OINV_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ANULACION_OINV_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+BEGIN
+	SELECT
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'1.0' as version,
+	'2.0' as versionUBL,
+	'6' as tipoDocumentoEmisor,
+	
+	'RA-'||TO_VARCHAR(T0."U_SMC_FECHABAJA" ,'yyyyMMdd')
+	||'-'
+	||LPAD((select count(*) from "OINV" where "U_SMC_FECHABAJA" = TO_VARCHAR(T0."U_SMC_FECHABAJA" ,'yyyyMMdd') and "U_SMC_ESTADO_FE" = '04')+1 ,3,'0') 
+	as resumenId,
+	
+	TO_VARCHAR(T0."TaxDate" ,'yyyy-MM-dd') as fechaEmisionComprobante,
+	TO_VARCHAR(T0."U_SMC_FECHABAJA" ,'yyyy-MM-dd') as fechaGeneracionResumen,
+	T3."BPLName" as razonSocialEmisor,
+	'-' as correoEmisor,
+	1 as inHabilitado,
+	'RA' as resumenTipo,
+	1 as numeroFila,
+	'01' as tipoDocumento,
+	T0."FolioPref" as serieDocumentoBaja,
+	TO_VARCHAR(T0."FolioNum") as numeroDocumentoBaja,
+	T0."U_SMC_MOTIVOBAJA" as motivoBaja
+	FROM "OINV" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+	
+	
+	
+	
+	/*SELECT
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'1.0' as version,
+	'2.0' as versionUBL,
+	'6' as tipoDocumentoEmisor,
+	'RA-'||TO_VARCHAR(CURRENT_DATE ,'yyyyMMdd')||'-001' as resumenId,
+	TO_VARCHAR(CURRENT_DATE ,'yyyy-MM-dd') as fechaEmisionComprobante,
+	TO_VARCHAR(CURRENT_DATE ,'yyyy-MM-dd') as fechaGeneracionResumen,
+	T3."BPLName" as razonSocialEmisor,
+	'-' as correoEmisor,
+	1 as inHabilitado,
+	'RA' as resumenTipo,
+	1 as numeroFila,
+	'01' as tipoDocumento,
+	T0."FolioPref" as serieDocumentoBaja,
+	TO_VARCHAR(T0."FolioNum") as numeroDocumentoBaja,
+	T0."U_SMC_MOTIVOBAJA" as motivoBaja
+	FROM "OINV" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;*/
+END</value>
+  </data>
+  <data name="SMC_ANULACION_OINV_FE_ACTUALIZAR" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ANULACION_OINV_FE_ACTUALIZAR" 
+(
+	IN DocEntry INT
+) 
+LANGUAGE SQLSCRIPT 
+AS 
+BEGIN
+	
+	UPDATE OINV
+	SET "U_SMC_MSJ_ESTADO_FE"='SU DOCUMENTO HA SIDO DADO DE BAJA',
+	"U_SMC_ESTADO_FE"='04'
+	WHERE "DocEntry"=DocEntry;	
+END;</value>
+  </data>
+  <data name="SMC_ANULACION_OVPM_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ANULACION_OVPM_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'1.0' as version,
+	'2.0' as versionUBL,
+	'6' as tipoDocumentoEmisor,
+	'RA-'||TO_VARCHAR(CURRENT_DATE ,'yyyyMMdd')||'-001' as resumenId,
+	TO_VARCHAR(CURRENT_DATE ,'yyyy-MM-dd') as fechaEmisionComprobante,
+	TO_VARCHAR(CURRENT_DATE ,'yyyy-MM-dd') as fechaGeneracionResumen,
+	T3."BPLName" as razonSocialEmisor,
+	'-' as correoEmisor,
+	1 as inHabilitado,
+	'RA' as resumenTipo,
+	1 as numeroFila,
+	'20' as tipoDocumento,
+	T0."U_SMC_SERIE_FE" as serieDocumentoBaja,
+	TO_VARCHAR(T0."U_SMC_NUM_FE") as numeroDocumentoBaja,
+	T0."U_SMC_RETENCION_BAJA" as motivoBaja
+	FROM "OVPM" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=:DocEntry;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTECUOTASODPI_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTECUOTASODPI_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+		DECLARE MontoDescuentoPEN decimal(18,2);
+	DECLARE MontoDescuentoUSD decimal(18,2);
+	
+	
+	SELECT 
+		(SUM(S0."InsTotal")-SUM(S0."WTSum")) into MontoDescuentoPEN
+		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO';
+	--FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL('NO','NO')) = 'NO';	
+	SELECT 
+		(SUM(S0."InsTotalFC")-SUM(S0."WTSumFC")) into MontoDescuentoUSD
+		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO';
+		--		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL('NO','NO')) = 'NO';
+			
+	SELECT 
+	"TipoFormaPago",
+	"MontoPendientePago",
+	"MontoPendientePago" AS "MontoPendientePagoPDF",
+	"MontoCuota",
+	"FechaPago",
+	"Moneda"
+	FROM
+	(
+    SELECT
+		CASE
+			WHEN (SELECT UPPER(R0."PymntGroup") FROM OCTG R0 WHERE  R0."GroupNum" = T0."GroupNum") LIKE '%CONTADO%' THEN '1'
+			WHEN T0."GroupNum"='5' THEN '1'
+			WHEN T0."GroupNum"='14' THEN '1'
+			WHEN T0."GroupNum"='17' THEN '1'
+			ELSE '2'
+		END AS "TipoFormaPago",
+		CASE
+			WHEN T0."DocCur" = 'SOL' THEN (SELECT (SUM(S0."InsTotal")-SUM(S0."WTSum")) FROM INV6 S0 WHERE T0."DocEntry" = S0."DocEntry" 
+									AND UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO' GROUP BY S0."DocEntry")
+			ELSE (SELECT (SUM(S0."InsTotalFC")-SUM(S0."WTSumFC")) FROM INV6 S0 WHERE T0."DocEntry" = S0."DocEntry" 
+									AND UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO' GROUP BY S0."DocEntry")
+--AND UPPER(IFNULL('NO','NO')) = 'NO' GROUP BY S0."DocEntry")
+		END AS "MontoPendientePago",
+		/*CASE
+			WHEN T0."DocCur" = 'SOL' THEN T1."InsTotal"
+			ELSE T1."InsTotalFC"
+		END AS "MontoCuota",*/
+		CASE
+			WHEN T0."DocCur" = 'SOL' THEN MontoDescuentoPEN
+			ELSE MontoDescuentoUSD
+		END AS "MontoCuota",
+		TO_VARCHAR(T1."DueDate",'yyyy-MM-dd')  AS "FechaPago",
+		T0."DocCur" as "Moneda"
+	FROM 
+		ODPI T0
+		LEFT JOIN INV6 T1 ON T0."DocEntry" = T1."DocEntry"
+	WHERE
+		T0."DocEntry" = :DocEntry
+	AND UPPER(IFNULL(T1."U_EXX_CONFTIPODET",'NO')) = 'NO'
+--AND UPPER(IFNULL('NO','NO')) = 'NO'
+	GROUP BY
+		T0."GroupNum",
+		T0."DocCur",
+		T1."InsTotal",
+		T1."InsTotalFC",
+		T1."DueDate",
+		T0."DocEntry"
+	) TMP;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTECUOTAS_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTECUOTAS_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+		DECLARE MontoDescuentoPEN decimal(18,2);
+	DECLARE MontoDescuentoUSD decimal(18,2);
+	
+	
+	SELECT 
+		(SUM(S0."InsTotal")-SUM(S0."WTSum")) into MontoDescuentoPEN
+		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO';
+	--FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL('NO','NO')) = 'NO';	
+	SELECT 
+		(SUM(S0."InsTotalFC")-SUM(S0."WTSumFC")) into MontoDescuentoUSD
+		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO';
+		--		FROM INV6 S0 WHERE  S0."DocEntry" =:DocEntry  and UPPER(IFNULL('NO','NO')) = 'NO';
+			
+	SELECT 
+	"TipoFormaPago",
+	"MontoPendientePago",
+	"MontoPendientePago" AS "MontoPendientePagoPDF",
+	"MontoCuota",
+	"FechaPago",
+	"Moneda"
+	FROM
+	(
+    SELECT
+		CASE
+			WHEN (SELECT UPPER(R0."PymntGroup") FROM OCTG R0 WHERE  R0."GroupNum" = T0."GroupNum") LIKE '%CONTADO%' THEN '1'
+			WHEN T0."GroupNum"='5' THEN '1'
+			WHEN T0."GroupNum"='14' THEN '1'
+			WHEN T0."GroupNum"='17' THEN '1'
+			ELSE '2'
+		END AS "TipoFormaPago",
+		CASE
+			WHEN T0."DocCur" = 'SOL' THEN (SELECT (SUM(S0."InsTotal")-SUM(S0."WTSum")) FROM INV6 S0 WHERE T0."DocEntry" = S0."DocEntry" 
+									AND UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO' GROUP BY S0."DocEntry")
+			ELSE (SELECT (SUM(S0."InsTotalFC")-SUM(S0."WTSumFC")) FROM INV6 S0 WHERE T0."DocEntry" = S0."DocEntry" 
+									AND UPPER(IFNULL(S0."U_EXX_CONFTIPODET",'NO')) = 'NO' GROUP BY S0."DocEntry")
+--AND UPPER(IFNULL('NO','NO')) = 'NO' GROUP BY S0."DocEntry")
+		END AS "MontoPendientePago",
+		/*CASE
+			WHEN T0."DocCur" = 'SOL' THEN T1."InsTotal"
+			ELSE T1."InsTotalFC"
+		END AS "MontoCuota",*/
+		CASE
+			WHEN T0."DocCur" = 'SOL' THEN MontoDescuentoPEN
+			ELSE MontoDescuentoUSD
+		END AS "MontoCuota",
+		TO_VARCHAR(T1."DueDate",'yyyy-MM-dd')  AS "FechaPago",
+		T0."DocCur" as "Moneda"
+	FROM 
+		OINV T0
+		LEFT JOIN INV6 T1 ON T0."DocEntry" = T1."DocEntry"
+	WHERE
+		T0."DocEntry" = :DocEntry
+	AND UPPER(IFNULL(T1."U_EXX_CONFTIPODET",'NO')) = 'NO'
+--AND UPPER(IFNULL('NO','NO')) = 'NO'
+	GROUP BY
+		T0."GroupNum",
+		T0."DocCur",
+		T1."InsTotal",
+		T1."InsTotalFC",
+		T1."DueDate",
+		T0."DocEntry"
+	) TMP;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTENC_DETALLE_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTENC_DETALLE_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	DECLARE SP_CODIMPUESTO VARCHAR(10);
+	DECLARE SP_MONTO DECIMAL(18,6);
+	
+	
+	create local temporary table #TablaDatos (
+	"numeroOrdenItem" varchar(10),
+	"unidadMedida" varchar(10),
+	"cantidad" decimal(18,6),
+	"codigoProducto" varchar(10),
+	"codigoProductoSUNAT" varchar(10),
+	"descripcion" varchar(100),
+	"importeUnitarioSinImpuesto" decimal(18,6),
+	"importeUnitarioConImpuesto" decimal(18,6),
+	"codigoImporteUnitarioConImpuesto" varchar(10),
+	"importeReferencial" decimal(18,6),
+	"codigoImporteReferencial" varchar(10),
+	"importeTotalImpuestos" decimal(18,6),
+	"montoBaseIgv" decimal(18,6),
+	"tasaIgv" decimal(18,6),
+	"codigoRazonExoneracion" varchar(10),
+	"importeIgv" decimal(18,6),
+	"importeTotalSinImpuesto" decimal(18,6));
+	
+	SELECT TOP 1
+	(T1."Price"),"TaxCode" into SP_MONTO,SP_CODIMPUESTO
+	
+	FROM "ORIN" T0
+	INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN 
+		INSERT INTO #TablaDatos (	"numeroOrdenItem",
+									"unidadMedida",
+									"cantidad",
+									"codigoProducto",
+									"codigoProductoSUNAT",
+									"descripcion",
+									"importeUnitarioSinImpuesto",
+									"importeUnitarioConImpuesto",
+									"codigoImporteUnitarioConImpuesto",
+									"importeReferencial",
+									"codigoImporteReferencial",
+									"importeTotalImpuestos",
+									"montoBaseIgv",
+									"tasaIgv",
+									"codigoRazonExoneracion",
+									"importeIgv",
+									"importeTotalSinImpuesto")
+		SELECT
+		 '1' AS numeroOrdenItem,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END)   AS descripcion,
+		ROUND(T1."Price"/2,2) AS importeUnitarioSinImpuesto,
+		ROUND(((SP_MONTO/2)+(SP_MONTO/2*0.18)),2) AS importeUnitarioConImpuesto,
+	
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeTotalImpuestos,
+		ROUND(T1."Price"/2,2)  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') AS  codigoRazonExoneracion,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeIgv,
+		ROUND(((T1."Quantity"*T1."Price")/2),2) AS importeTotalSinImpuesto
+		FROM "ORIN" T0
+		INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry;
+		
+		
+		INSERT INTO #TablaDatos (	"numeroOrdenItem",
+									"unidadMedida",
+									"cantidad",
+									"codigoProducto",
+									"codigoProductoSUNAT",
+									"descripcion",
+									"importeUnitarioSinImpuesto",
+									"importeUnitarioConImpuesto",
+									"codigoImporteUnitarioConImpuesto",
+									"importeReferencial",
+									"codigoImporteReferencial",
+									"importeTotalImpuestos",
+									"montoBaseIgv",
+									"tasaIgv",
+									"codigoRazonExoneracion",
+									"importeIgv",
+									"importeTotalSinImpuesto")
+		SELECT
+		  '2' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END)   AS descripcion,
+		CAST((SP_MONTO/2) as decimal(18,2))  AS importeUnitarioSinImpuesto,
+		CAST((SP_MONTO/2) as decimal(18,2))  AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		0 AS importeTotalImpuestos,
+		CAST((SP_MONTO/2) as decimal(18,2))  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		'30' AS  codigoRazonExoneracion,
+		0 AS importeIgv,
+		CAST(((T1."Quantity"*T1."Price")/2) as decimal(18,2)) AS importeTotalSinImpuesto
+		FROM "ORIN" T0
+		INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry;			
+	ELSE
+	
+		(SELECT
+		 '1' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END)   AS descripcion,
+		T1."Price" AS importeUnitarioSinImpuesto,
+		T1."PriceAfVAT" AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeTotalImpuestos,
+		T1."Price"  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') AS  codigoRazonExoneracion,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeIgv,
+		(T1."Quantity"*T1."Price") AS importeTotalSinImpuesto
+		FROM "ORIN" T0
+		INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+	END IF;
+	
+	select*from #TablaDatos;
+
+	DROP TABLE #TablaDatos;
+
+END;</value>
+  </data>
+  <data name="SMC_COMPROBANTENC_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTENC_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	
+	DECLARE ExisteDetraccion INT DEFAULT 0;
+	DECLARE SP_CODIMPUESTO VARCHAR(10);
+	DECLARE SP_MONTO,SP_OPERACIONESGRAVADA,SP_OPERACIONESNOGRAVADAS DECIMAL(18,6);
+	
+	SELECT TOP 1
+	(T1."Price"),"TaxCode" into SP_MONTO,SP_CODIMPUESTO
+	FROM "ORIN" T0
+	INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	
+	--HALLANDO TOTALES
+	SELECT 
+	SUM(T1."Price") into SP_OPERACIONESGRAVADA
+	FROM "ORIN" T0
+	INNER JOIN "RIN1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	SP_OPERACIONESNOGRAVADAS=0;
+	
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN
+		SP_OPERACIONESGRAVADA:=(SP_OPERACIONESGRAVADA/2);
+		SP_OPERACIONESNOGRAVADAS:=SP_OPERACIONESGRAVADA;
+	END IF;
+	
+	
+
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	T0."Indicator" as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'richard.tito@imagina.pe' as correoEmisor,
+	T2."E_Mail" as correoAdquiriente,
+	
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumero,	
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmision,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN 'PEN' ELSE 'USD'
+	END) as tipoMoneda,
+	
+	
+	
+	--DATOS DEL EMISOR--
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'6' as tipoDocumentoEmisor,
+	T3."BPLFrName" as nombreComercialEmisor,
+	T3."BPLName" as razonSocialEmisor,
+	T3."AddrType"||' '||T3."Street" ||' '||T3."StreetNo"||' '||T3."Building"   as direccionEmisor,
+	T3."ZipCode" as ubigeoEmisor,
+	T3."City" as departamentoEmisor, --MODIFICAR
+	T3."City" as provinciaEmisor,
+	T3."County" as distritoEmisor,
+	T3."Country" as paisEmisor,
+	'0000' as codigoLocalAnexoEmisor,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL ADQUIRIENTE
+	T2."LicTradNum" as numeroDocumentoAdquiriente,
+	T2."U_EXX_TIPODOCU" as tipoDocumentoAdquiriente,
+	T2."CardName" as razonSocialAdquiriente,
+	
+	
+		IFNULL((SELECT MAX(T00."Street") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as direccionAdquiriente,
+	'' as urbanizacionAdquiriente,
+	IFNULL((SELECT MAX(T00."County") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as provinciaAdquiriente,
+	"SMC_OBTENERUBIGEO"(T2."CardCode",IFNULL((SELECT MAX(T00."Address") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),''),'B') as ubigeoAdquiriente,
+
+
+	IFNULL(
+		(
+			SELECT IFNULL(T000."Name",'') FROM "OCST" T000 WHERE 
+			T000."Country"=IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+			AND 
+			T000."Code"=IFNULL((SELECT MAX(T00."State") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+		)
+	,'')
+	
+	 as departamentoAdquiriente,
+	
+	IFNULL((SELECT MAX(T00."ZipCode") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as distritoAdquiriente,
+	IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as paisAdquiriente,
+	
+	
+	--'' as direccionAdquiriente,
+	--'' as urbanizacionAdquiriente,
+	--'' as provinciaAdquiriente,
+	--'' as ubigeoAdquiriente,
+	--'' as departamentoAdquiriente,
+	--'' as distritoAdquiriente,
+	--'' as paisAdquiriente,
+	--END DATOS DEL ADQUIRIENTE
+
+	--DOCUMENTOS DE REFERENCIA
+	'09' as tipoReferencia_1,
+	'' as numeroDocumentoReferencia_1,
+	T0."U_SMC_ORDENCOMPRA_FE" as ordenCompra,
+	--END DOCUMENTOS DE REFERENCIA
+
+	--TOTALES FACTURA
+	IFNULL(T0."U_SMC_TIPOOPERACION_FE",'') as tipoOperacion,
+	ROUND(SP_OPERACIONESGRAVADA,2) as totalValorVentaNetoOpGravadas,
+	(CASE 
+		WHEN SP_CODIMPUESTO='IGV_IMB' THEN CAST(SP_OPERACIONESNOGRAVADAS as decimal(18,2))
+		ELSE ROUND(SP_OPERACIONESNOGRAVADAS,2)
+	END) as totalValorVentaNetoOpNoGravada,
+	
+	0 as totalValorVentaNetoOpExoneradas,
+	0 as totalValorVentaNetoOpGratuitas,
+	0 as totalValorVentaNetoOpExportacion,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."VatSum"  ELSE T0."VatSumFC" 
+	END) as totalImpuestos,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."VatSum"  ELSE T0."VatSumFC" 
+	END) as totalIgv,
+	0 as montoBaseIsc,
+	0 as totalIsc,
+	0 as montoBaseOtrosTributos,
+	0 as totalOtrosTributos,
+	0 as montoBaseICBPER,
+	0 as totalMontoICBPER,
+	0 as montoBaseDescuentoGlobal,
+	0 as porcentajeDsctoGlobal,
+	0 as descuentosGlobales,
+	0 as montoBaseDsctoGlobalAnticipo,
+	0 as porcentajeDsctoGlobalAnticipo,
+	0 as totalDsctoGlobalesAnticipo,
+	0 as montoBaseDsctoGlobalNoAfecto,
+	0 as porcentajeDsctoGlobalNoAfecto,
+	0 as totalDsctoGlobalesNoAfecto,
+	0 as totalDescuentos,
+	0 as montoBaseCargoGlobal,
+	0 as porcentajeCargoGlobal,
+	0 as cargosGlobales,
+	0 as montoBaseCargoGlobalNoAfecto,
+	0 as porcentajeCargoGlobalNoAfecto,
+	0 as totalCargoGlobalNoAfecto,
+	0 as montoBaseRecargoConsumoPropina,
+	0 as porcentajeRecargoConsumoPropina,
+	0 as totalOtrosCargos,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."DocTotal",0)  ELSE IFNULL(T0."DocTotalFC",0)
+	END) as totalVenta,
+	(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) as totalValorVenta,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."DocTotal",0)  ELSE IFNULL(T0."DocTotalFC",0)
+	END) as totalPrecioVenta,
+	0 as montoRedondeoTotalVenta,
+	--END TOTALES FACTURA
+
+	--PERCEPCION
+	0 as regimenPercepcion,
+	0 as baseImponiblePercepcion,
+	0 as totalPercepcion,
+	0 as totalVentaConPercepcion,
+	0 as porcentajePercepcion,
+	--END PERCEPCION
+
+	--TOTAL ANTICIPOS
+	0 as totalDocumentoAnticipo,
+	--END TOTAL ANTICIPOS
+
+	--DETRACCIONES
+	0 as codigoDetraccion,
+	0 as totalDetraccion,
+	0 as porcentajeDetraccion,
+	0 as numeroCtaBancoNacion,
+	0 as formaPago,
+	-- END DETRACCIONES
+
+	--FORMA DE PAGO
+	0 as formaPagoNegociable,
+	0 as montoNetoPendiente,
+	--END FORMA DE PAGO
+
+	--NOTA DE CREDITO
+	IFNULL(T0."U_SMC_TIPONC_FE",'') as codigoSerieNumeroAfectado,
+	IFNULL(T0."U_SMC_MOTNC_FE",'') as motivoDocumento,
+	IFNULL(T0."U_EXX_TIPDOCOR",'') as tipoDocumentoReferenciaPrincipal,
+	IFNULL(T0."U_EXX_SERDOCOR",'')||'-'|| LPAD(ifnull(T0."U_EXX_CORDOCOR",''),8,'0') as numeroDocumentoReferenciaPrincipal,
+	--END NOTA DE CREDITO
+
+
+	--LEYENDA
+	'1000' as codigoLeyenda_1,
+	(CASE 
+	WHEN T0."DocCur" = 'SOL' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotal",2),
+	                        'SOLES'))
+	WHEN T0."DocCur" = 'USD' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotalFC",2),
+	                        'DOLARES')) END )
+	as  textoLeyenda_1,
+	
+	--CUANDO ES DETRACCION
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN '2006' ELSE ''
+	END) as codigoLeyenda_4,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN 'OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS' ELSE ''
+	END) as textoLeyenda_4
+	
+
+	--END LEYENDA
+	
+	FROM "ORIN" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTEODPI_DETALLE_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTEODPI_DETALLE_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	DECLARE SP_CODIMPUESTO VARCHAR(10);
+	DECLARE SP_MONTO DECIMAL(18,6);
+	
+
+	create local temporary table #TablaDatos (
+	"NUMEROORDENITEM" varchar(10),
+	"UNIDADMEDIDA" varchar(10),
+	"CANTIDAD" decimal(10,6),
+	"CODIGOPRODUCTO" varchar(10),
+	"CODIGOPRODUCTOSUNAT" varchar(10),
+	"DESCRIPCION" varchar(100),
+	"IMPORTEUNITARIOSINIMPUESTO" decimal(18,6),
+	"IMPORTEUNITARIOCONIMPUESTO" decimal(18,6),
+	"CODIGOIMPORTEUNITARIOCONIMPUESTO" varchar(10),
+	"IMPORTEREFERENCIAL" decimal(18,6),
+	"CODIGOIMPORTEREFERENCIAL" varchar(10),
+	"IMPORTETOTALIMPUESTOS" decimal(18,6),
+	"MONTOBASEIGV" decimal(18,6),
+	"TASAIGV" decimal(18,6),
+	"CODIGORAZONEXONERACION" varchar(10),
+	"IMPORTEIGV" decimal(18,6),
+	"IMPORTETOTALSINIMPUESTO" decimal(18,6));
+	
+	SELECT TOP 1
+	(T1."Price"),"TaxCode" into SP_MONTO,SP_CODIMPUESTO
+	
+	FROM "ODPI" T0
+	INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN 
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '1' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END) AS descripcion,
+		ROUND(T1."Price"/2,2) AS importeUnitarioSinImpuesto,
+		ROUND(((SP_MONTO/2)+(SP_MONTO/2*0.18)),2) AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2) ELSE ROUND(T1."VatSumFrgn",2)
+		END)
+		 AS importeTotalImpuestos,
+		ROUND(T1."Price"*T1."Quantity"/2,2)  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') AS  codigoRazonExoneracion,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2) ELSE ROUND(T1."VatSumFrgn",2)
+		END) AS importeIgv,
+		ROUND(((T1."Quantity"*T1."Price")/2),2) AS importeTotalSinImpuesto
+		FROM "ODPI" T0
+		INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+		
+		
+		
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '2' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END) AS descripcion,
+		CAST((SP_MONTO/2) as decimal(18,2)) AS importeUnitarioSinImpuesto,
+		CAST((SP_MONTO/2) as decimal(18,2)) AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		0 AS importeTotalImpuestos,
+		CAST((SP_MONTO*T1."Quantity"/2) as decimal(18,2))  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		'30' AS  codigoRazonExoneracion,
+		0 AS importeIgv,
+		CAST(((T1."Quantity"*T1."Price")/2) as decimal(18,2)) AS importeTotalSinImpuesto
+		FROM "ODPI" T0
+		INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+	ELSE
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '1' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END) AS descripcion,
+		T1."Price" AS importeUnitarioSinImpuesto,
+		T1."PriceAfVAT" AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='10' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='20' THEN ''
+			WHEN T1."U_SMC_TIPOAFECT_FE" !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2) ELSE ROUND(T1."VatSumFrgn",2)
+		END) AS importeTotalImpuestos,
+		ROUND(T1."Price"*T1."Quantity",2)  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') AS  codigoRazonExoneracion,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2) ELSE ROUND(T1."VatSumFrgn",2)
+		END) AS importeIgv,
+		(T1."Quantity"*T1."Price") AS importeTotalSinImpuesto
+		FROM "ODPI" T0
+		INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+	END IF;
+	
+	select*from #TablaDatos;
+	
+	
+	DROP TABLE #TablaDatos;
+	
+	
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTEODPI_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTEODPI_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	
+	DECLARE ExisteDetraccion INT DEFAULT 0;
+	DECLARE SP_CODIMPUESTO,SP_CODEDETRACCION VARCHAR(10) DEFAULT '';
+	DECLARE SP_MONTO,SP_OPERACIONESGRAVADA,SP_OPERACIONESNOGRAVADAS,
+			SP_PORCENTAJEDETRACCION,SP_TOTALDETRACCION,
+			SP_MONTOTOTAL, TIPOCAMBIO DECIMAL(18,6);
+
+	SELECT TOP 1
+	(T1."Price"),"TaxCode",
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."DocTotal" ELSE T0."DocTotalFC"
+	END),
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN 1 ELSE T0."DocRate"
+	END) 
+	into SP_MONTO,SP_CODIMPUESTO,SP_MONTOTOTAL, TIPOCAMBIO
+	FROM "ODPI" T0
+	INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	
+	--HALLANDO TOTALES
+	SELECT 
+	SUM(T1."Price" * T1."Quantity") into SP_OPERACIONESGRAVADA
+	FROM "ODPI" T0
+	INNER JOIN "DPI1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	SP_OPERACIONESNOGRAVADAS=0;
+	
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN
+		SP_OPERACIONESGRAVADA:=(SP_OPERACIONESGRAVADA/2);
+		SP_OPERACIONESNOGRAVADAS:=SP_OPERACIONESGRAVADA;
+	END IF;
+
+	--DETRACCION
+	SELECT count(*) into ExisteDetraccion FROM "DPI6" WHERE "DocEntry"=DocEntry AND UPPER("U_EXX_CONFTIPODET")='SI';
+	
+	select MAX(IFNULL("U_EXX_GRUPODET",'')) INTO SP_CODEDETRACCION from "DPI1" WHERE "DocEntry"=DocEntry;
+	SELECT IFNULL(
+	(SELECT T11."U_EXX_PORDET" FROM "@EXX_GRUDET" T10  
+	INNER JOIN "@EXX_GRUDET1" T11 ON T11."Code" = T10."Code" 
+	AND TO_DATS(CURRENT_DATE)  BETWEEN TO_DATS(T11."U_EXX_FECINI") AND TO_DATS(IFNULL(T11."U_EXX_FECFIN",'20991231'))
+	 WHERE T10."Code" = SP_CODEDETRACCION),0) INTO SP_PORCENTAJEDETRACCION
+	 FROM DUMMY;
+	 
+	IF SP_PORCENTAJEDETRACCION&gt;0 THEN
+		ExisteDetraccion:=1;
+		SP_TOTALDETRACCION= (case when (TO_INTEGER(SP_MONTOTOTAL*SP_PORCENTAJEDETRACCION/100) &lt; 1) then 1 else (TO_INTEGER(SP_MONTOTOTAL*SP_PORCENTAJEDETRACCION*TIPOCAMBIO/100)) end);
+	END IF;
+	--EDN DETRACCION
+	
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	T0."Indicator" as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'richard.tito@imagina.pe' as correoEmisor,
+	T2."E_Mail" as correoAdquiriente,
+	
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumero,	
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmision,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN 'PEN' ELSE 'USD'
+	END) as tipoMoneda,
+	
+	
+	
+	--DATOS DEL EMISOR--
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'6' as tipoDocumentoEmisor,
+	T3."BPLFrName" as nombreComercialEmisor,
+	T3."BPLName" as razonSocialEmisor,
+	T3."AddrType"||' '||T3."Street" ||' '||T3."StreetNo"||' '||T3."Building"   as direccionEmisor,
+	T3."ZipCode" as ubigeoEmisor,
+	T3."City" as departamentoEmisor, --MODIFICAR
+	T3."City" as provinciaEmisor,
+	T3."County" as distritoEmisor,
+	T3."Country" as paisEmisor,
+	'0000' as codigoLocalAnexoEmisor,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL ADQUIRIENTE
+	T2."LicTradNum" as numeroDocumentoAdquiriente,
+	T2."U_EXX_TIPODOCU" as tipoDocumentoAdquiriente,
+	T2."CardName" as razonSocialAdquiriente,
+	IFNULL((SELECT MAX(T00."Street") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as direccionAdquiriente,
+	'' as urbanizacionAdquiriente,
+	IFNULL((SELECT MAX(T00."County") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as provinciaAdquiriente,
+	"SMC_OBTENERUBIGEO"(T2."CardCode",IFNULL((SELECT MAX(T00."Address") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),''),'B') as ubigeoAdquiriente,
+
+
+	IFNULL(
+		(
+			SELECT IFNULL(T000."Name",'') FROM "OCST" T000 WHERE 
+			T000."Country"=IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+			AND 
+			T000."Code"=IFNULL((SELECT MAX(T00."State") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+		)
+	,'')
+	
+	 as departamentoAdquiriente,
+	
+	IFNULL((SELECT MAX(T00."ZipCode") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as distritoAdquiriente,
+	IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as paisAdquiriente,
+	--END DATOS DEL ADQUIRIENTE
+
+	--DOCUMENTOS DE REFERENCIA
+	'09' as tipoReferencia_1,
+	'' as numeroDocumentoReferencia_1,
+	T0."U_SMC_ORDENCOMPRA_FE" as ordenCompra,
+	--END DOCUMENTOS DE REFERENCIA
+
+	--TOTALES FACTURA
+   (CASE 
+	   	WHEN ExisteDetraccion&gt;0 THEN '1001' 
+	   	ELSE IFNULL(T0."U_SMC_TIPOOPERACION_FE",'0101') 
+	END)
+	as tipoOperacion,
+	
+	ROUND(SP_OPERACIONESGRAVADA,2) as totalValorVentaNetoOpGravadas,
+	
+	(CASE 
+		WHEN SP_CODIMPUESTO='IGV_IMB' THEN CAST(SP_OPERACIONESNOGRAVADAS as decimal(18,2))
+		ELSE ROUND(SP_OPERACIONESNOGRAVADAS,2)
+	END) as totalValorVentaNetoOpNoGravada,
+	0 as totalValorVentaNetoOpExoneradas,
+	0 as totalValorVentaNetoOpGratuitas,
+	0 as totalValorVentaNetoOpExportacion,
+	
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."VatSum",0) ELSE IFNULL(T0."VatSumFC",0)
+	END)
+	 as totalImpuestos,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."VatSum",0) ELSE IFNULL(T0."VatSumFC",0)
+	END) as totalIgv,
+	0 as montoBaseIsc,
+	0 as totalIsc,
+	0 as montoBaseOtrosTributos,
+	0 as totalOtrosTributos,
+	0 as montoBaseICBPER,
+	0 as totalMontoICBPER,
+	0 as montoBaseDescuentoGlobal,
+	0 as porcentajeDsctoGlobal,
+	0 as descuentosGlobales,
+	0 as montoBaseDsctoGlobalAnticipo,
+	0 as porcentajeDsctoGlobalAnticipo,
+	0 as totalDsctoGlobalesAnticipo,
+	0 as montoBaseDsctoGlobalNoAfecto,
+	0 as porcentajeDsctoGlobalNoAfecto,
+	0 as totalDsctoGlobalesNoAfecto,
+	0 as totalDescuentos,
+	0 as montoBaseCargoGlobal,
+	0 as porcentajeCargoGlobal,
+	0 as cargosGlobales,
+	0 as montoBaseCargoGlobalNoAfecto,
+	0 as porcentajeCargoGlobalNoAfecto,
+	0 as totalCargoGlobalNoAfecto,
+	0 as montoBaseRecargoConsumoPropina,
+	0 as porcentajeRecargoConsumoPropina,
+	0 as totalOtrosCargos,
+	
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."DocTotal",0) ELSE IFNULL(T0."DocTotalFC",0)
+	END)
+	 as totalVenta,
+	
+	(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) as totalValorVenta,
+	
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."DocTotal",0) ELSE IFNULL(T0."DocTotalFC",0)
+	END) as totalPrecioVenta,
+	0 as montoRedondeoTotalVenta,
+	--END TOTALES FACTURA
+
+	--PERCEPCION
+	0 as regimenPercepcion,
+	0 as baseImponiblePercepcion,
+	0 as totalPercepcion,
+	0 as totalVentaConPercepcion,
+	0 as porcentajePercepcion,
+	--END PERCEPCION
+
+	--TOTAL ANTICIPOS
+	0 as totalDocumentoAnticipo,
+	--END TOTAL ANTICIPOS
+
+	--DETRACCIONES
+	(CASE WHEN ExisteDetraccion&gt;0 THEN 'Y' ELSE 'N' END)  as TieneDetraccion,
+
+	SP_CODEDETRACCION as codigoDetraccion,
+	
+	--(CASE 
+	--	WHEN ExisteDetraccion&gt;0 THEN (select MAX(T00."InsTotal") from "DPI6" T00 WHERE T00."DocEntry"=T0."DocEntry" AND T00."U_EXX_CONFTIPODET"='SI')
+	--	ELSE 0
+	--END)
+	SP_TOTALDETRACCION as totalDetraccion,
+	--(CASE 
+	--	WHEN ExisteDetraccion&gt;0 THEN (select MAX(T00."InstPrcnt") from "DPI6" T00 WHERE T00."DocEntry"=T0."DocEntry" AND T00."U_EXX_CONFTIPODET"='SI')
+	--	ELSE 0
+	--END)/100
+	SP_PORCENTAJEDETRACCION as porcentajeDetraccion,
+	(case 
+	when T3."GlblLocNum" = '20509901172' then '000-46051920'
+	when T3."GlblLocNum" = '20508650613' then '000-46051904'
+	when T3."GlblLocNum" = '20517504620' then '000-46129032'
+	when T3."GlblLocNum" = '20510966067' then '000-46052560'
+	when T3."GlblLocNum" ='20610565418'  then '000-46357795'
+	when T3."GlblLocNum" ='20610776702'  then '000-46357787'
+	when T3."GlblLocNum" ='20514505404'  then '000-76010889'
+	when T3."GlblLocNum" ='20537745631'  then '000-46221672'
+	when T3."GlblLocNum" ='20519161746'  then '000-76131678'
+	when T3."GlblLocNum" ='20515532171'  then '000-76009457'
+	when T3."GlblLocNum" ='20517000079'  then '000-46181506'
+	when T3."GlblLocNum" ='20517001636'  then '000-46128990'
+	when T3."GlblLocNum" ='20514048071'  then '000-46052579'
+	when T3."GlblLocNum" ='20515544934'  then '0000-2115182'
+	when T3."GlblLocNum" ='20517503224'  then '000-46264053'
+	when T3."GlblLocNum" ='20514047856'  then '000-46049349'
+	when T3."GlblLocNum" ='20515544187'  then '000-46240863'
+	when T3."GlblLocNum" ='20511926131'  then '000-46051939'
+	when T3."GlblLocNum" ='20517300382'  then '000-46049322'
+	when T3."GlblLocNum" ='20517511677'  then '000-46086473'
+	when T3."GlblLocNum" ='20517502503'  then '000-46164733'
+	when T3."GlblLocNum" ='20519159920'  then '000-46230728'
+	when T3."GlblLocNum" ='20519163013'  then '000-46049314'
+	when T3."GlblLocNum" ='20537748142'  then '000-46086465'
+	when T3."GlblLocNum" ='20507065326'  then '000-05080983'
+	when T3."GlblLocNum" ='20511810184'  then '000-46052587'
+	when T3."GlblLocNum" ='20601320283'  then '000-46277945'
+	when T3."GlblLocNum" ='20609273161'  then '000-46357809'
+	when T3."GlblLocNum" ='20609752786'  then '000-20048581'
+	when T3."GlblLocNum" ='20610859217'  then '000-46374878'
+	when T3."GlblLocNum" ='20612102822'  then '0000-3377741'
+	else ''
+	end ) as numeroCtaBancoNacion,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN '001'
+		ELSE ''
+	END) as formaPago,
+	'9777'  as codigoAuxiliar100_5,
+	'es_PE' as textoAuxiliar100_5,
+	'9805' as codigoAuxiliar500_1,
+	(case 
+	when T3."GlblLocNum" = '20509901172' then '000-46051920'
+	when T3."GlblLocNum" = '20508650613' then '000-46051904'
+	when T3."GlblLocNum" = '20517504620' then '000-46129032'
+	when T3."GlblLocNum" = '20510966067' then '000-46052560'
+	when T3."GlblLocNum" ='20610565418'  then '000-46357795'
+	when T3."GlblLocNum" ='20610776702'  then '000-46357787'
+	when T3."GlblLocNum" ='20514505404'  then '000-76010889'
+	when T3."GlblLocNum" ='20537745631'  then '000-46221672'
+	when T3."GlblLocNum" ='20519161746'  then '000-76131678'
+	when T3."GlblLocNum" ='20515532171'  then '000-76009457'
+	when T3."GlblLocNum" ='20517000079'  then '000-46181506'
+	when T3."GlblLocNum" ='20517001636'  then '000-46128990'
+	when T3."GlblLocNum" ='20514048071'  then '000-46052579'
+	when T3."GlblLocNum" ='20515544934'  then '0000-2115182'
+	when T3."GlblLocNum" ='20517503224'  then '000-46264053'
+	when T3."GlblLocNum" ='20514047856'  then '000-46049349'
+	when T3."GlblLocNum" ='20515544187'  then '000-46240863'
+	when T3."GlblLocNum" ='20511926131'  then '000-46051939'
+	when T3."GlblLocNum" ='20517300382'  then '000-46049322'
+	when T3."GlblLocNum" ='20517511677'  then '000-46086473'
+	when T3."GlblLocNum" ='20517502503'  then '000-46164733'
+	when T3."GlblLocNum" ='20519159920'  then '000-46230728'
+	when T3."GlblLocNum" ='20519163013'  then '000-46049314'
+	when T3."GlblLocNum" ='20537748142'  then '000-46086465'
+	when T3."GlblLocNum" ='20507065326'  then '000-05080983'
+	when T3."GlblLocNum" ='20511810184'  then '000-46052587'
+	when T3."GlblLocNum" ='20601320283'  then '000-46277945'
+	when T3."GlblLocNum" ='20609273161'  then '000-46357809'
+	when T3."GlblLocNum" ='20609752786'  then '000-20048581'
+	when T3."GlblLocNum" ='20610859217'  then '000-46374878'
+	when T3."GlblLocNum" ='20612102822'  then '0000-3377741'
+	else ''
+	end ) as textoAuxiliar500_1,
+	-- END DETRACCIONES
+
+	--FORMA DE PAGO
+ 	(CASE
+ 		WHEN IFNULL((SELECT T00."ExtraDays" FROM  "OCTG" T00 WHERE T00."GroupNum"=T0."GroupNum"),0)=0 THEN 0
+ 		ELSE 1
+ 	 END) as formaPagoNegociable,
+	
+	
+	0 as montoNetoPendiente,
+	--END FORMA DE PAGO
+
+
+	--Retencion
+	T0."DocTotal" as importeOpeRetencion,
+	0.03 as porcentajeRetencion,
+	T0."WTSum" as importeRetencion,
+	--End Retencion
+
+--LEYENDA
+	'1000' as codigoLeyenda_1,
+	(CASE 
+	WHEN T0."DocCur" = 'SOL' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotal",2),
+	                        'SOLES'))
+	WHEN T0."DocCur" = 'USD' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotalFC",2),
+	                        'DOLARES')) END )
+	as  textoLeyenda_1,
+	
+	--CUANDO ES DETRACCION
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN '2006' ELSE ''
+	END) as codigoLeyenda_4,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN 'OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS' ELSE ''
+	END) as textoLeyenda_4
+	
+
+	--END LEYENDA
+	
+	FROM "ODPI" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTES_ELECTRONICOS" xml:space="preserve">
+    <value>CREATE procedure "SMC_COMPROBANTES_ELECTRONICOS"
+(
+	IN Fecha1 date,
+	IN fecha2 date,
+	IN tipodoc nvarchar(500),
+	IN estado nvarchar(5),
+	In sucursal varchar(10) default null
+) 
+LANGUAGE SQLSCRIPT AS
+BEGIN 
+
+	SELECT  * ,CURRENT_DATE FROM (
+	
+		SELECT comp."DocEntry","DocNum",cli."LicTradNum"  as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '01' then 'FACTURA'
+		when '03' then 'BOLETA'
+		when '08' then 'NOTA DEBITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'   
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'EMITIDO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'RECHAZADO' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",     
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,  
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie,
+		T3."BPLName" as Sucursal
+		FROM oinv comp
+		INNER JOIN ocrd cli on comp."CardCode"=cli."CardCode"
+		INNER JOIN OBPL T3 ON comp."BPLId"=T3."BPLId"
+		WHERE/* canceled = 'N' */ COMP."CardName" NOT LIKE '%ANULADO%' AND  
+		comp."Indicator"= (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) and
+		(CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) and
+		comp."Indicator" NOT IN ('DI', 'AN')  
+		and comp."TaxDate" between fecha1 and fecha2
+		AND comp."DocEntry"&lt;&gt;8085   
+--AND ((estado = '*' AND estado = estado) OR (estado = '00' AND (COMP."CardName" NOT LIKE '%ANULADO%' AND comp.Indicator NOT IN ('DI', 'AN')))  OR (estado != '00' AND comp."U_SMC_ESTADO_FE"= estado))  
+		AND comp."Indicator" IN ('01','03','08','09')--SUBSTRING(comp."FolioPref", 1 , 1) != 'E'  
+		AND T3."BPLId" = (case when :sucursal = '99' then T3."BPLId" else :sucursal end)
+		 
+		UNION   
+		  
+		SELECT comp."DocEntry","DocNum",cli."LicTradNum"  as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '01' then 'FACTURA ANT'
+		when '03' then 'BOLETA ANT'
+		when '08' then 'NOTA DEBITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'EMITIDO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'RECHAZADO' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",   
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie,
+		T3."BPLName" as Sucursal
+		FROM ODPI comp  
+		INNER JOIN ocrd cli on comp."CardCode"=cli."CardCode"
+		INNER JOIN OBPL T3 ON comp."BPLId"=T3."BPLId"
+		WHERE/* canceled = 'N' AND */COMP."CardName" NOT LIKE '%ANULADO%' AND
+		comp."Indicator"= (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) and
+		(CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) and
+		comp."Indicator" NOT IN ('DI', 'AN') and comp."TaxDate" between fecha1 and fecha2
+		AND comp."DocEntry"&lt;&gt;8085  
+		AND SUBSTRING(ifnull(comp."FolioPref",''), 1 , 1) != 'E'  
+		AND T3."BPLId" = (case when :sucursal = '99' then T3."BPLId" else :sucursal end)
+		
+		
+		
+		UNION  
+		
+		-------RETENCION--------
+		
+		select *  from(
+		select 
+		comp."DocEntry",
+		comp."DocNum",
+		cli."LicTradNum" as "Ruc",
+		comp."CardName",
+		comp."DocCurr",
+		comp."TaxDate",
+		'20' as "Indicator",
+		'RETENCION' AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'   
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'EMITIDO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'RECHAZADO' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",
+		comp."VatSum",
+		comp."DocTotal",
+		comp."U_SMC_SERIE_FE",
+		comp."U_SMC_NUM_FE",
+		'' dato1,  
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_RETENCION_BAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_RETENCION_BAJA",'')
+		END) as Nota
+		,'' as ReferenciaSerie,
+		T3."BPLName" as Sucursal
+	
+		from OVPM comp
+		inner join VPM6 t1 on comp."DocEntry" = t1."DocNum"
+		INNER JOIN ocrd cli on comp."CardCode" = cli."CardCode"
+		INNER JOIN OBPL T3 ON comp."BPLId" = T3."BPLId"
+		where (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) 
+		and comp."U_SMC_SERIE_FE" is not null
+		and comp."U_SMC_NUM_FE" is not null
+		AND T3."BPLId" = (case when :sucursal = '99' then T3."BPLId" else :sucursal end)
+		) as T 
+		WHERE T."CardName" NOT LIKE '%ANULADO%' 
+		AND T."Indicator" = (CASE WHEN tipodoc  = '*' THEN T."Indicator"  ELSE tipodoc END ) 
+		and T."TaxDate" between fecha1 and fecha2
+		and ifnull(T."Comments",'') not like '%Anulado%'
+		and ifnull(T."Comments",'') not like '%Detracciones%'
+
+		UNION
+
+		-------RETENCION---------
+		
+		-------GUIAAAAAAA-------
+/*
+		SELECT comp."DocEntry","DocNum",cli."LicTradNum"  as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		'GUIA REMISION' AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'   
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'EMITIDO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'RECHAZADO' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",     
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,  
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie,
+		T3."BPLName" as Sucursal
+		FROM odln comp
+		INNER JOIN ocrd cli on comp."CardCode"=cli."CardCode"
+		INNER JOIN OBPL T3 ON comp."BPLId"=T3."BPLId"
+		WHERE COMP."CardName" NOT LIKE '%ANULADO%' AND  
+		comp."Indicator"= (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) and
+		(CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) and
+		comp."Indicator" NOT IN ('DI', 'AN')  
+		and comp."TaxDate" between fecha1 and fecha2
+		AND comp."DocEntry"&lt;&gt;8085   
+		AND comp."Indicator" IN ('01','03','08','09')--SUBSTRING(comp."FolioPref", 1 , 1) != 'E'  
+		-------GUIAAAAAAA-------
+		
+		UNION*/
+		 
+		select comp."DocEntry","DocNum",cli."LicTradNum" as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '07' then 'NOTA CREDITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '01' then 'EMITIDO'
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'RECHAZADO' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END) AS "U_SMC_ESTADO_FE",   
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie,
+		T3."BPLName" as Sucursal
+		FROM orin comp
+		inner join ocrd cli on comp."CardCode"=cli."CardCode"
+		INNER JOIN OBPL T3 ON comp."BPLId"=T3."BPLId"
+		where canceled = 'N' AND COMP."CardName" NOT LIKE '%ANULADO%' AND
+		comp."Indicator" = (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) 
+		and (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)  ELSE   estado END )
+		and comp."Indicator" NOT IN ('DI', 'AN') and comp."TaxDate" between fecha1 and fecha2  
+		AND SUBSTRING(ifnull(comp."FolioPref",''), 1 , 1) != 'E' 
+		AND T3."BPLId" = (case when :sucursal = '99' then T3."BPLId" else :sucursal end)
+		) as DUMMY
+	where "TaxDate" between '20190313' and cast (CURRENT_DATE as date)
+	ORDER BY "DocEntry" DESC;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTES_ELECTRONICOS_SERVICIO" xml:space="preserve">
+    <value>CREATE procedure "SMC_COMPROBANTES_ELECTRONICOS_SERVICIO"
+(
+	IN Fecha1 date,
+	IN fecha2 date,
+	IN tipodoc nvarchar(500),
+	IN estado nvarchar(5)
+) 
+LANGUAGE SQLSCRIPT AS
+BEGIN 
+
+	SELECT  * ,CURRENT_DATE FROM (
+	
+		SELECT comp."DocEntry","DocNum",cli."LicTradNum"  as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '01' then 'FACTURA'
+		when '03' then 'BOLETA'
+		when '08' then 'NOTA DEBITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'   
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'RECHAZADO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'ACEPTADO CON OBS.' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",     
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,  
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie
+		FROM oinv comp
+		INNER JOIN ocrd cli on comp."CardCode"=cli."CardCode"
+		WHERE/* canceled = 'N' */ COMP."CardName" NOT LIKE '%ANULADO%' AND  
+		comp."Indicator"= (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) and
+		(CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) and
+		comp."Indicator" NOT IN ('DI', 'AN')  
+		and comp."TaxDate" between fecha1 and fecha2
+		AND comp."DocEntry"&lt;&gt;8085   
+--AND ((estado = '*' AND estado = estado) OR (estado = '00' AND (COMP."CardName" NOT LIKE '%ANULADO%' AND comp.Indicator NOT IN ('DI', 'AN')))  OR (estado != '00' AND comp."U_SMC_ESTADO_FE"= estado))  
+		AND SUBSTRING(comp."FolioPref", 1 , 1) != 'E'  
+		  
+		  
+		UNION   
+		  
+		SELECT comp."DocEntry","DocNum",cli."LicTradNum"  as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '01' then 'FACTURA ANT'
+		when '03' then 'BOLETA ANT'
+		when '08' then 'NOTA DEBITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'  
+			when comp."U_SMC_ESTADO_FE" = '01' then 'RECHAZADO'   
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'ACEPTADO CON OBS.' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END)  AS "U_SMC_ESTADO_FE",   
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie
+		FROM ODPI comp  
+		INNER JOIN ocrd cli on comp."CardCode"=cli."CardCode"
+		WHERE/* canceled = 'N' AND */COMP."CardName" NOT LIKE '%ANULADO%' AND
+		comp."Indicator"= (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) and
+		(CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END) ELSE estado END ) and
+		comp."Indicator" NOT IN ('DI', 'AN') and comp."TaxDate" between fecha1 and fecha2
+		AND comp."DocEntry"&lt;&gt;8085  
+		AND SUBSTRING(comp."FolioPref", 1 , 1) != 'E'  
+		  
+		UNION
+		 
+		select comp."DocEntry","DocNum",cli."LicTradNum" as "Ruc",comp."CardName",comp."DocCur",comp."TaxDate",comp."Indicator" as Indicator,
+		case comp."Indicator" when '07' then 'NOTA CREDITO'
+		ELSE '' END AS "TipoDocumento",
+		comp."Comments",
+		(case  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" NOT LIKE '%ANULADO%' then 'FALTA'  
+			when comp."U_SMC_ESTADO_FE" = '00' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '01' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '01' AND COMP."CardName" LIKE '%ANULADO%' then 'RECHAZADO'
+			when comp."U_SMC_ESTADO_FE" = '02' then 'ACEPTADO'
+			when comp."U_SMC_ESTADO_FE" = '03' then 'ACEPTADO CON OBS.' 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN 'FALTA'
+		END) AS "U_SMC_ESTADO_FE",   
+		comp."VatSum",comp."DocTotal",
+		comp."FolioPref",
+		comp."FolioNum",
+		'' dato1,
+		'' as dato2, '' as dato3
+		,comp."ObjType" as objectId
+		,(CASE 
+			WHEN IFNULL(comp."U_SMC_MOTIVOBAJA",'')='' THEN ''
+			ELSE IFNULL(comp."U_SMC_MOTIVOBAJA",'')
+		END) as Nota
+		,IFNULL(comp."NumAtCard",'') as ReferenciaSerie
+		FROM orin comp
+		inner join ocrd cli on comp."CardCode"=cli."CardCode"
+		where canceled = 'N' AND COMP."CardName" NOT LIKE '%ANULADO%' AND
+		comp."Indicator" = (CASE WHEN tipodoc  = '*' THEN comp."Indicator"  ELSE   tipodoc END ) 
+		and (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)= (CASE WHEN estado  = '*' THEN (CASE 
+			WHEN LENGTH(IFNULL(comp."U_SMC_ESTADO_FE",''))=0 THEN '00'
+			ELSE IFNULL(comp."U_SMC_ESTADO_FE",'00')
+		END)  ELSE   estado END )
+		and comp."Indicator" NOT IN ('DI', 'AN') and comp."TaxDate" between fecha1 and fecha2  
+		AND SUBSTRING(comp."FolioPref", 1 , 1) != 'E' 
+		
+		) as DUMMY
+	where "TaxDate" between '20190313' and cast (CURRENT_DATE as date)
+	ORDER BY "DocEntry" DESC;
+END</value>
+  </data>
+  <data name="SMC_COMPROBANTE_DETALLE_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTE_DETALLE_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	DECLARE SP_CODIMPUESTO VARCHAR(10);
+	DECLARE SP_MONTO DECIMAL(18,6);
+	
+
+	create local temporary table #TablaDatos (
+	"NUMEROORDENITEM" varchar(10),
+	"UNIDADMEDIDA" varchar(10),
+	"CANTIDAD" decimal(18,6),
+	"CODIGOPRODUCTO" varchar(25),
+	"CODIGOPRODUCTOSUNAT" varchar(25),
+	"DESCRIPCION" varchar(100),
+	"IMPORTEUNITARIOSINIMPUESTO" decimal(18,6),
+	"IMPORTEUNITARIOCONIMPUESTO" decimal(18,6),
+	"CODIGOIMPORTEUNITARIOCONIMPUESTO" varchar(10),
+	"IMPORTEREFERENCIAL" decimal(18,6),
+	"CODIGOIMPORTEREFERENCIAL" varchar(10),
+	"IMPORTETOTALIMPUESTOS" decimal(18,6),
+	"MONTOBASEIGV" decimal(18,6),
+	"TASAIGV" decimal(18,6),
+	"CODIGORAZONEXONERACION" varchar(10),
+	"IMPORTEIGV" decimal(18,6),
+	"IMPORTETOTALSINIMPUESTO" decimal(18,6));
+	
+	SELECT TOP 1
+	(T1."Price"),"TaxCode" into SP_MONTO,SP_CODIMPUESTO
+	
+	FROM "OINV" T0
+	INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN 
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '1' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		--IFNULL(T1."FreeTxt",T1."Dscription")
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END)  AS descripcion,
+		ROUND(T1."Price"/2,2) AS importeUnitarioSinImpuesto,
+		ROUND(((SP_MONTO/2)+(SP_MONTO/2*0.18)),2) AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='10' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='20' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeTotalImpuestos,
+		ROUND((T1."Price"*T1."Quantity"/2), 2) AS  montoBaseIgv,
+		18 AS tasaIgv,
+		IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') AS  codigoRazonExoneracion,
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeIgv,
+		ROUND(((T1."Quantity"*T1."Price")/2),2) AS importeTotalSinImpuesto
+		FROM "OINV" T0
+		INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+		
+		
+		
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '2' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		--IFNULL(T1."FreeTxt",T1."Dscription")
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END) AS descripcion,
+		CAST((SP_MONTO/2) as decimal(18,2)) AS importeUnitarioSinImpuesto,
+		CAST((SP_MONTO/2) as decimal(18,2))  AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		0 AS importeReferencial,
+	
+		--(Catálogo No. 16)
+		(CASE 
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='10' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='20' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='30' THEN ''
+			ELSE '02'
+		END ) AS codigoImporteReferencial,
+	
+	
+		0 AS importeTotalImpuestos,
+		ROUND((SP_MONTO*T1."Quantity"/2), 2)  AS  montoBaseIgv,
+		18 AS tasaIgv,
+		'30' AS  codigoRazonExoneracion,
+		0 AS importeIgv,
+		CAST(((T1."Quantity"*T1."Price")/2) as decimal(18,2)) AS importeTotalSinImpuesto
+		FROM "OINV" T0
+		INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+	ELSE
+		INSERT INTO #TablaDatos ("NUMEROORDENITEM","UNIDADMEDIDA","CANTIDAD","CODIGOPRODUCTO","CODIGOPRODUCTOSUNAT","DESCRIPCION","IMPORTEUNITARIOSINIMPUESTO","IMPORTEUNITARIOCONIMPUESTO","CODIGOIMPORTEUNITARIOCONIMPUESTO","IMPORTEREFERENCIAL","CODIGOIMPORTEREFERENCIAL","IMPORTETOTALIMPUESTOS","MONTOBASEIGV","TASAIGV","CODIGORAZONEXONERACION","IMPORTEIGV","IMPORTETOTALSINIMPUESTO")
+		  (SELECT
+		 '1' AS numeroOrdenItem,
+		 --IFNULL((SELECT "U_SMC_UND_MED_NAC_CPE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),'NIU') AS unidadMedida,
+		'NIU' AS unidadMedida,
+		T1."Quantity" AS cantidad,
+		T1."ItemCode"  AS codigoProducto,
+		'' AS codigoProductoSUNAT,
+		--IFNULL(T1."FreeTxt",T1."Dscription")
+		(CASE 
+			WHEN LENGTH(IFNULL(T1."FreeTxt",''))=0 THEN T1."Dscription"
+			ELSE T1."FreeTxt"
+		END)
+		  AS descripcion,
+		
+		(case when ifnull(T1."U_SMC_TIPOAFECT_FE",'10') in ('13','12','15') then 0 else 
+		T1."Price" end) AS importeUnitarioSinImpuesto,
+		
+		ROUND((case when ifnull(T1."U_SMC_TIPOAFECT_FE",'10') in ('13','12','15') then 0 else 
+		T1."PriceAfVAT" end),2) AS importeUnitarioConImpuesto,
+		
+		--(Catálogo No. 16)
+		'01' AS codigoImporteUnitarioConImpuesto,
+		
+		
+		(case when ifnull(T1."U_SMC_TIPOAFECT_FE",'10') in ('13','12','15') then (T1."Quantity"*T1."Price") else
+		0 end) AS importeReferencial,
+	    
+		--(Catálogo No. 16)
+		(Case when ifnull(T1."U_SMC_TIPOAFECT_FE",'10')  in ('13','12','15') then '02' else
+		(CASE 
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='10' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='20' THEN ''
+			WHEN ifnull(T1."U_SMC_TIPOAFECT_FE",'10') !='30' THEN ''
+			ELSE '02'
+		END )end) AS codigoImporteReferencial,
+	
+	
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeTotalImpuestos,
+		ROUND((T1."Price"*T1."Quantity"), 2)AS  montoBaseIgv,
+		18 AS tasaIgv,
+		
+		(case when ifnull(T1."U_SMC_TIPOAFECT_FE",'10') in ('13','12','15') then  ifnull(T1."U_SMC_TIPOAFECT_FE",'10')
+         else
+		(CASE
+			T1."TaxCode"
+			WHEN 'IGV' THEN '10'
+			WHEN 'EXO' THEN '20'
+			WHEN 'INA' THEN '30'
+			ELSE IFNULL(T1."U_SMC_TIPOAFECT_FE",'10') 
+		 END)end) AS  codigoRazonExoneracion,
+		
+		
+		(CASE 
+			WHEN T0."DocCur"='SOL' THEN ROUND(T1."VatSum",2)   ELSE ROUND(T1."VatSumFrgn",2) 
+		END) AS importeIgv,
+		(T1."Quantity"*T1."Price") AS importeTotalSinImpuesto
+		FROM "OINV" T0
+		INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+		WHERE T0."DocEntry"=:DocEntry);
+	END IF;
+	
+	select*from #TablaDatos;
+	
+	
+	DROP TABLE #TablaDatos;
+	
+	
+END;</value>
+  </data>
+  <data name="SMC_COMPROBANTE_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_COMPROBANTE_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+
+	DECLARE ExisteDetraccion INT DEFAULT 0;
+	DECLARE SP_CODIMPUESTO,SP_SERIENUM_GUIA VARCHAR(10);
+	DECLARE SP_MONTO,SP_OPERACIONESGRAVADA,SP_OPERACIONESGRAVADAGRAT,SP_OPERACIONESEXONERADA,SP_OPERACIONESNOGRAVADAS,SP_MONTOANTICIPO,SP_TOTALESANTICIPO DECIMAL(18,6);
+
+	SELECT TOP 1
+	ifnull((T1."Price"),0),"TaxCode",
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."DpmAmnt" ELSE T0."DpmAmntFC"
+	END)
+	
+	 into SP_MONTO,SP_CODIMPUESTO,SP_MONTOANTICIPO
+	FROM "OINV" T0
+	INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry;
+	
+	
+	--HALLANDO TOTALES
+	SELECT 
+	ifnull(SUM(T1."Price" * T1."Quantity"),0) into SP_OPERACIONESGRAVADA
+	FROM "OINV" T0
+	INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry AND T1."TaxCode" LIKE 'IGV%' /* NUEVO se paso de demo*/AND ifnull(T1."U_SMC_TIPOAFECT_FE",'10') NOT IN ('13','15');
+	
+	SELECT 
+	ifnull(SUM(T1."Price"),0) into SP_OPERACIONESNOGRAVADAS
+	FROM "OINV" T0
+	INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry AND T1."TaxCode" LIKE 'INA%'; --/* NUEVO se paso de demo*/AND ifnull(T1."U_SMC_TIPOAFECT_FE",'10') NOT IN ('13','15');
+	--SP_OPERACIONESNOGRAVADAS=0;
+	
+	/*NUEVO se paso de demo*/
+	SELECT
+    ifnull(SUM(T1."Price" * T1."Quantity"),0) into SP_OPERACIONESGRAVADAGRAT
+    FROM "OINV" T0
+    INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+    WHERE T0."DocEntry"=:DocEntry AND T1."TaxCode" LIKE 'IGV%' AND ifnull(T1."U_SMC_TIPOAFECT_FE",'10') IN ('13','15');
+	/*NUEVO se paso de demo*/
+	
+	
+	SELECT 
+	ifnull(SUM(T1."Price" * T1."Quantity"),0) into SP_OPERACIONESEXONERADA
+	FROM "OINV" T0
+	INNER JOIN "INV1" T1 ON T0."DocEntry"=T1."DocEntry"
+	WHERE T0."DocEntry"=:DocEntry AND T1."TaxCode"='EXO';
+
+	
+	
+	SP_OPERACIONESGRAVADA:=IFNULL(SP_OPERACIONESGRAVADA,0);
+	SP_OPERACIONESEXONERADA:=IFNULL(SP_OPERACIONESEXONERADA,0);
+	
+	IF SP_CODIMPUESTO='IGV_IMB' THEN
+		SP_OPERACIONESGRAVADA:=(SP_OPERACIONESGRAVADA/2);
+		SP_OPERACIONESNOGRAVADAS:=SP_OPERACIONESGRAVADA;
+	END IF;
+	
+	SP_SERIENUM_GUIA:=IFNULL((SELECT TOP 1 ENGuia."FolioPref"||'-'||TO_VARCHAR(ENGuia."FolioNum")
+FROM "INV1" ENDetalleComprobante
+INNER JOIN "DLN1" ENDetalleGuia ON ENDetalleComprobante."BaseEntry" = ENDetalleGuia."DocEntry"
+AND ENDetalleComprobante."BaseLine" = ENDetalleGuia."LineNum" 
+INNER JOIN "ODLN" ENGuia ON ENGuia."DocEntry" = ENDetalleGuia."DocEntry" AND ENDetalleComprobante."BaseType" = '15' 
+WHERE
+ENDetalleComprobante."DocEntry" = :DocEntry),'');
+	
+	
+	SELECT count(*) into ExisteDetraccion FROM "INV6" WHERE "DocEntry"=DocEntry AND UPPER("U_EXX_CONFTIPODET")='SI';
+	
+	
+	
+	--ANTICIPO
+	lt_data_tmp_detalle_anticipo=(
+	SELECT ENComprobante."DocEntry", (CASE ENComprobante."Indicator" WHEN '01' THEN '02' WHEN '03' THEN '03' END) AS "Codigo", 
+	(CASE fact_adelanto."DocCur" WHEN 'SOL' THEN detalleadelanto."DrawnSum" ELSE detalleadelanto."DrawnSumFc" END) AS "Valor", 
+	(CASE fact_adelanto."DocCur" WHEN 'SOL' THEN fact_adelanto."DocTotal" ELSE fact_adelanto."DocTotalFC" END) AS "TotalDoc", 
+	(Right('000' || Ltrim(Rtrim(ENComprobante."FolioPref")), 4) || '-' || CAST(fact_adelanto."FolioNum" AS varchar(10))) AS "CodigoInstruccion", 
+	'20512857869' AS "RUC", '6' AS "TipoDocumentoIdentidad", fact_adelanto."JrnlMemo" AS "Descripcion", 
+	ENComprobante."DocNum" AS "DocNumBase", 
+	ENComprobante."Indicator" AS "TipoDocBase" FROM OINV ENComprobante INNER JOIN "INV9" detalleadelanto ON ENComprobante."DocEntry" = detalleadelanto."DocEntry" 
+	INNER JOIN "ODPI" fact_adelanto ON detalleadelanto."BaseAbs" = fact_adelanto."DocEntry" 
+	INNER JOIN "OCRD" cliente ON fact_adelanto."CardCode" = cliente."CardCode" 
+	WHERE  ENComprobante."DocEntry" = DocEntry );
+	
+	CREATE LOCAL TEMPORARY TABLE  "#tmpDetalleAnticipo" AS (
+		select * from :lt_data_tmp_detalle_anticipo
+	);
+	
+	SP_TOTALESANTICIPO:=IFNULL(
+		(SELECT SUM("TotalDoc") FROM  "#tmpDetalleAnticipo")
+	,0);
+	--END ANTICIPO
+
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	T0."Indicator" as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'richard.tito@imagina.pe' as correoEmisor,
+	T2."E_Mail" as correoAdquiriente,
+	
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumero,	
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmision,
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN 'PEN' ELSE 'USD'
+	END) as tipoMoneda,
+	
+	
+	
+	--DATOS DEL EMISOR--
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'6' as tipoDocumentoEmisor,
+	T3."BPLFrName" as nombreComercialEmisor,
+	T3."BPLName" as razonSocialEmisor,
+	T3."AddrType"||' '||T3."Street" ||' '||T3."StreetNo"||' '||T3."Building"   as direccionEmisor,
+	T3."ZipCode" as ubigeoEmisor,
+	T3."City" as departamentoEmisor, --MODIFICAR
+	T3."City" as provinciaEmisor,
+	T3."County" as distritoEmisor,
+	T3."Country" as paisEmisor,
+	'0000' as codigoLocalAnexoEmisor,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL ADQUIRIENTE
+	T2."LicTradNum" as numeroDocumentoAdquiriente,
+	T2."U_EXX_TIPODOCU" as tipoDocumentoAdquiriente,
+	T2."CardName" as razonSocialAdquiriente,
+	IFNULL((SELECT MAX(T00."Street") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as direccionAdquiriente,
+	'' as urbanizacionAdquiriente,
+	IFNULL((SELECT MAX(T00."County") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as provinciaAdquiriente,
+	"SMC_OBTENERUBIGEO"(T2."CardCode",IFNULL((SELECT MAX(T00."Address") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),''),'B') as ubigeoAdquiriente,
+
+
+	IFNULL(
+		(
+			SELECT IFNULL(T000."Name",'') FROM "OCST" T000 WHERE 
+			T000."Country"=IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+			AND 
+			T000."Code"=IFNULL((SELECT MAX(T00."State") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'')
+		)
+	,'')
+	
+	 as departamentoAdquiriente,
+	
+	IFNULL((SELECT MAX(T00."ZipCode") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as distritoAdquiriente,
+	IFNULL((SELECT MAX(T00."Country") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as paisAdquiriente,
+	--END DATOS DEL ADQUIRIENTE
+
+	--DOCUMENTOS DE REFERENCIA
+	'09' as tipoReferencia_1,
+	IFNULL(SP_SERIENUM_GUIA,'') as numeroDocumentoReferencia_1,
+	T0."U_SMC_ORDENCOMPRA_FE" as ordenCompra,
+	--END DOCUMENTOS DE REFERENCIA
+
+	--TOTALES FACTURA
+	
+	(CASE 
+	   	WHEN ExisteDetraccion&gt;0 THEN '1001' 
+	   	ELSE IFNULL(T0."U_SMC_TIPOOPERACION_FE",'0101') 
+	END)
+	as tipoOperacion,
+	
+	
+	(CASE 
+			WHEN SP_MONTOANTICIPO=(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) THEN  0
+			ELSE (SP_OPERACIONESGRAVADA)
+	END) as totalValorVentaNetoOpGravadas,
+	--(SP_OPERACIONESGRAVADA) as totalValorVentaNetoOpGravadas,
+	
+	(CASE 
+			WHEN SP_MONTOANTICIPO=(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) THEN 0
+			ELSE SP_OPERACIONESNOGRAVADAS
+	END) as totalValorVentaNetoOpNoGravada,
+	--SP_OPERACIONESNOGRAVADAS as totalValorVentaNetoOpNoGravada,
+	
+	SP_OPERACIONESEXONERADA as totalValorVentaNetoOpExoneradas,
+	SP_OPERACIONESGRAVADAGRAT as totalValorVentaNetoOpGratuitas,
+	0 as totalValorVentaNetoOpExportacion,
+	
+	(case when SP_OPERACIONESGRAVADAGRAT &gt; 0 then 0 else (
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."VatSum"  ELSE T0."VatSumFC" 
+	END)) end)as totalImpuestos,
+	
+	(case when SP_OPERACIONESGRAVADAGRAT &gt; 0 then 0 else (
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."VatSum"  ELSE T0."VatSumFC" 
+	END)) end)  as totalIgv,
+	
+	(case when SP_OPERACIONESGRAVADAGRAT &gt; 0 then 
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN T0."VatSum"  ELSE T0."VatSumFC" 
+	 END)
+	 else 0 end)
+	as totalTributosOpeGratuitas,
+	
+	0 as montoBaseIsc,
+	0 as totalIsc,
+	0 as montoBaseOtrosTributos,
+	0 as totalOtrosTributos,
+	0 as montoBaseICBPER,
+	0 as totalMontoICBPER,
+	0 as montoBaseDescuentoGlobal,
+	0 as porcentajeDsctoGlobal,
+	0 as descuentosGlobales,
+	--ANTICIPO
+	(CASE 
+		WHEN SP_MONTOANTICIPO&gt;0 THEN (SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS)
+		ELSE 0
+	END) as montoBaseDsctoGlobalAnticipo,
+	(CASE 
+		WHEN SP_MONTOANTICIPO=(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) THEN 1
+		ELSE 0
+	END) as porcentajeDsctoGlobalAnticipo,
+	(CASE 
+		WHEN SP_MONTOANTICIPO&gt;0 THEN SP_MONTOANTICIPO
+		ELSE 0
+	END) as totalDsctoGlobalesAnticipo,
+
+	IFNULL(SP_TOTALESANTICIPO,0) as totalDocumentoAnticipo,
+
+	--END ANTICIPO
+	0 as montoBaseDsctoGlobalNoAfecto,
+	0 as porcentajeDsctoGlobalNoAfecto,
+	0 as totalDsctoGlobalesNoAfecto,
+	0 as totalDescuentos,
+	0 as montoBaseCargoGlobal,
+	0 as porcentajeCargoGlobal,
+	0 as cargosGlobales,
+	0 as montoBaseCargoGlobalNoAfecto,
+	0 as porcentajeCargoGlobalNoAfecto,
+	0 as totalCargoGlobalNoAfecto,
+	0 as montoBaseRecargoConsumoPropina,
+	0 as porcentajeRecargoConsumoPropina,
+	0 as totalOtrosCargos,
+	
+	(case when  SP_OPERACIONESGRAVADAGRAT &gt; 0 then 0 else (
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN IFNULL(T0."DocTotal",0)  ELSE IFNULL(T0."DocTotalFC",0)
+	END) )end)
+	 as totalVenta,
+	
+	((SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS)) as totalValorVenta,
+	
+	(CASE 
+		WHEN T0."DocCur"='SOL' THEN 
+		(CASE 
+			WHEN SP_MONTOANTICIPO=(SP_OPERACIONESGRAVADA+SP_OPERACIONESNOGRAVADAS) THEN SP_TOTALESANTICIPO
+			ELSE IFNULL(T0."DocTotal",0)  
+		END)
+		
+		
+		ELSE IFNULL(T0."DocTotalFC",0)
+	END) as totalPrecioVenta,
+	0 as montoRedondeoTotalVenta,
+	--END TOTALES FACTURA
+
+	--PERCEPCION
+	0 as regimenPercepcion,
+	0 as baseImponiblePercepcion,
+	0 as totalPercepcion,
+	0 as totalVentaConPercepcion,
+	0 as porcentajePercepcion,
+	--END PERCEPCION
+
+
+	--DETRACCIONES
+	(CASE WHEN ExisteDetraccion&gt;0 THEN 'Y' ELSE 'N' END)  as TieneDetraccion,
+
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN (select MAX(T00."U_EXX_GRUPODET") from "INV1" T00 WHERE T00."DocEntry"=T0."DocEntry" )
+		ELSE ''
+	END) as codigoDetraccion,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN (select MAX(T00."InsTotal") from "INV6" T00 WHERE T00."DocEntry"=T0."DocEntry" AND UPPER(T00."U_EXX_CONFTIPODET")='SI')
+		ELSE 0
+	END) as totalDetraccion,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN (select MAX(T00."InstPrcnt") from "INV6" T00 WHERE T00."DocEntry"=T0."DocEntry" AND UPPER(T00."U_EXX_CONFTIPODET")='SI')
+		ELSE 0
+	END)/100 as porcentajeDetraccion,
+	
+	(case 
+	when T3."GlblLocNum" = '20509901172' then '000-46051920'
+	when T3."GlblLocNum" = '20508650613' then '000-46051904'
+	when T3."GlblLocNum" = '20517504620' then '000-46129032'
+	when T3."GlblLocNum" = '20510966067' then '000-46052560'
+	when T3."GlblLocNum" ='20610565418'  then '000-46357795'
+	when T3."GlblLocNum" ='20610776702'  then '000-46357787'
+	when T3."GlblLocNum" ='20514505404'  then '000-76010889'
+	when T3."GlblLocNum" ='20537745631'  then '000-46221672'
+	when T3."GlblLocNum" ='20519161746'  then '000-76131678'
+	when T3."GlblLocNum" ='20515532171'  then '000-76009457'
+	when T3."GlblLocNum" ='20517000079'  then '000-46181506'
+	when T3."GlblLocNum" ='20517001636'  then '000-46128990'
+	when T3."GlblLocNum" ='20514048071'  then '000-46052579'
+	when T3."GlblLocNum" ='20515544934'  then '0000-2115182'
+	when T3."GlblLocNum" ='20517503224'  then '000-46264053'
+	when T3."GlblLocNum" ='20514047856'  then '000-46049349'
+	when T3."GlblLocNum" ='20515544187'  then '000-46240863'
+	when T3."GlblLocNum" ='20511926131'  then '000-46051939'
+	when T3."GlblLocNum" ='20517300382'  then '000-46049322'
+	when T3."GlblLocNum" ='20517511677'  then '000-46086473'
+	when T3."GlblLocNum" ='20517502503'  then '000-46164733'
+	when T3."GlblLocNum" ='20519159920'  then '000-46230728'
+	when T3."GlblLocNum" ='20519163013'  then '000-46049314'
+	when T3."GlblLocNum" ='20537748142'  then '000-46086465'
+	when T3."GlblLocNum" ='20507065326'  then '000-05080983'
+	when T3."GlblLocNum" ='20511810184'  then '000-46052587'
+	when T3."GlblLocNum" ='20601320283'  then '000-46277945'
+	when T3."GlblLocNum" ='20609273161'  then '000-46357809'
+	when T3."GlblLocNum" ='20609752786'  then '000-20048581'
+	when T3."GlblLocNum" ='20610859217'  then '000-46374878'
+	when T3."GlblLocNum" ='20612102822'  then '0000-3377741'
+	else ''
+	end ) as numeroCtaBancoNacion,
+	
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN '001'
+		ELSE ''
+	END) as formaPago,
+	'9777'  as codigoAuxiliar100_5,
+	'es_PE' as textoAuxiliar100_5,
+	'9805' as codigoAuxiliar500_1,
+	(case 
+	when T3."GlblLocNum" = '20509901172' then '000-46051920'
+	when T3."GlblLocNum" = '20508650613' then '000-46051904'
+	when T3."GlblLocNum" = '20517504620' then '000-46129032'
+	when T3."GlblLocNum" = '20510966067' then '000-46052560'
+	when T3."GlblLocNum" ='20610565418'  then '000-46357795'
+	when T3."GlblLocNum" ='20610776702'  then '000-46357787'
+	when T3."GlblLocNum" ='20514505404'  then '000-76010889'
+	when T3."GlblLocNum" ='20537745631'  then '000-46221672'
+	when T3."GlblLocNum" ='20519161746'  then '000-76131678'
+	when T3."GlblLocNum" ='20515532171'  then '000-76009457'
+	when T3."GlblLocNum" ='20517000079'  then '000-46181506'
+	when T3."GlblLocNum" ='20517001636'  then '000-46128990'
+	when T3."GlblLocNum" ='20514048071'  then '000-46052579'
+	when T3."GlblLocNum" ='20515544934'  then '0000-2115182'
+	when T3."GlblLocNum" ='20517503224'  then '000-46264053'
+	when T3."GlblLocNum" ='20514047856'  then '000-46049349'
+	when T3."GlblLocNum" ='20515544187'  then '000-46240863'
+	when T3."GlblLocNum" ='20511926131'  then '000-46051939'
+	when T3."GlblLocNum" ='20517300382'  then '000-46049322'
+	when T3."GlblLocNum" ='20517511677'  then '000-46086473'
+	when T3."GlblLocNum" ='20517502503'  then '000-46164733'
+	when T3."GlblLocNum" ='20519159920'  then '000-46230728'
+	when T3."GlblLocNum" ='20519163013'  then '000-46049314'
+	when T3."GlblLocNum" ='20537748142'  then '000-46086465'
+	when T3."GlblLocNum" ='20507065326'  then '000-05080983'
+	when T3."GlblLocNum" ='20511810184'  then '000-46052587'
+	when T3."GlblLocNum" ='20601320283'  then '000-46277945'
+	when T3."GlblLocNum" ='20609273161'  then '000-46357809'
+	when T3."GlblLocNum" ='20609752786'  then '000-20048581'
+	when T3."GlblLocNum" ='20610859217'  then '000-46374878'
+	when T3."GlblLocNum" ='20612102822'  then '0000-3377741'
+	else ''
+	end ) as textoAuxiliar500_1,
+	--CUANDO ES DETRACCION
+
+	-- END DETRACCIONES
+
+	--FORMA DE PAGO
+ 	(CASE
+ 		WHEN IFNULL((SELECT T00."ExtraDays" FROM  "OCTG" T00 WHERE T00."GroupNum"=T0."GroupNum"),0)=0 THEN 0
+ 		ELSE 1
+ 	 END) as formaPagoNegociable,
+	
+	
+	0 as montoNetoPendiente,
+	--END FORMA DE PAGO
+
+
+	--Retencion
+	T0."DocTotal" as importeOpeRetencion,
+	0.03 as porcentajeRetencion,
+	T0."WTSum" as importeRetencion,
+	--End Retencion
+
+	--LEYENDA
+	'1000' as codigoLeyenda_1,
+	(CASE 
+	WHEN T0."DocCur" = 'SOL' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotal",2),
+	                        'SOLES'))
+	WHEN T0."DocCur" = 'USD' THEN TO_VARCHAR("RPT_SMC_ConvertirNumeroLetra"(round(T0."DocTotalFC",2),
+	                        'DOLARES')) END )
+	as  textoLeyenda_1,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN '2006' ELSE ''
+	END) as codigoLeyenda_4,
+	(CASE 
+		WHEN ExisteDetraccion&gt;0 THEN 'OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS' ELSE ''
+	END) as textoLeyenda_4,
+	--END LEYENDA
+
+	--NOTA DE DEBITO
+	IFNULL(T0."U_SMC_TIPOND_FE",'') as codigoSerieNumeroAfectado,
+	IFNULL((select "Name" from "@SMC_TIPOND_FE" Where "Code"=T0."U_SMC_TIPOND_FE"),'') as motivoDocumento,
+	IFNULL(T0."U_EXX_TIPDOCOR",'') as tipoDocumentoReferenciaPrincipal,
+	IFNULL(T0."U_EXX_SERDOCOR",'')||'-'|| LPAD(ifnull(T0."U_EXX_CORDOCOR",''),8,'0') as numeroDocumentoReferenciaPrincipal
+	--END NOTA DE DEBITO
+	
+
+	FROM "OINV" T0
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+	
+	DROP TABLE "#tmpDetalleAnticipo";
+END</value>
+  </data>
+  <data name="SMC_LISTARANTICIPOS_OINV" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_LISTARANTICIPOS_OINV"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+BEGIN
+	SELECT DISTINCT 
+	ENComprobante."DocEntry",
+	'A' as indicador,
+	'' as numeroOrdenAnticipo,
+	CAST( Round(
+		(CASE 
+			fact_adelanto."DocCur" 
+			WHEN 'SOL' THEN fact_adelanto."DocTotal" 
+			ELSE fact_adelanto."DocTotalFC"  END
+		), 2) AS decimal(18, 2)) 
+	AS "totalPrepagadoAnticipo",
+	TO_VARCHAR(fact_adelanto."TaxDate" ,'yyyy-MM-dd') as "fechaPago",
+	Rtrim(fact_adelanto."FolioPref", 4) || '-' || 
+	Right('00000000' || CAST(fact_adelanto."FolioNum" AS varchar(10)), 8) 
+	AS "serieNumeroDocumentoAnticipo", 
+	(CASE 
+		ENComprobante."Indicator" 
+		WHEN '01' THEN '02' 
+		WHEN '03' 
+		THEN '03' 
+	END) AS "tipoDocumentoAnticipo",
+	T3."GlblLocNum" as numeroDocumentoEmisorAnticipo,
+	'6' as tipoDocumentoEmisorAnticipo
+	FROM OINV ENComprobante 
+	INNER JOIN "INV9" detalleadelanto ON ENComprobante."DocEntry" = detalleadelanto."DocEntry" 
+	INNER JOIN "ODPI" fact_adelanto ON detalleadelanto."BaseAbs" = fact_adelanto."DocEntry" 
+	INNER JOIN "OBPL" T3 ON ENComprobante."BPLId"=T3."BPLId"		
+	WHERE 
+	ENComprobante."DocEntry" = DocEntry;
+
+END</value>
+  </data>
+  <data name="SMC_OBTENER_SUCURSALES" xml:space="preserve">
+    <value>create procedure SMC_OBTENER_SUCURSALES
+as begin
+
+select "BPLId", "BPLName" from OBPL;
+
+end</value>
+  </data>
+  <data name="SMC_ODLN_GRE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ODLN_GRE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	'09' as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'richard.tito@imagina.pe' as correoEmisor,
+	'richard.tito@imagina.pe' as correoAdquiriente,
+	--LPAD('1',8,'0')
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumeroGuia,
+   --ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),5,'0') as serieNumeroGuia,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmisionGuia,
+	--TO_VARCHAR(TO_TIME(T0."CreateTS",'HHMISS')) as horaEmisionGuia,
+	--TO_VARCHAR(CURRENT_DATE,'HHMISS') as horaEmisionGuia,
+	'09:00:00' as horaEmisionGuia,
+	T0."Indicator" as tipoDocumentoGuia,
+	T0."Comments" AS Observaciones,
+	
+	
+	--DATOS DEL REMITENTE--
+	T3."GlblLocNum" as numeroDocumentoRemitente,
+	'6' as tipoDocumentoRemitente,
+	T3."BPLName" as razonSocialRemitente,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL DESTINATARIO
+	T2."LicTradNum" as numeroDocumentoDestinatario,
+	T2."U_EXX_TIPODOCU" as tipoDocumentoDestinatario,
+	T2."CardName" as razonSocialDestinatario,
+	--END DATOS DEL DESTINATARIO
+
+	--DATOS DE ENVIO
+	T0."U_EXX_MOTIVTRA" as motivoTraslado,
+	(CASE 
+		WHEN T0."U_EXX_MOTIVTRA"!='13' THEN (SELECT "Name" FROM "@EXX_MOTTRA" WHERE "Code"=T0."U_EXX_MOTIVTRA")
+		ELSE IFNULL(T0."U_SMC_MOTVOTROS_GRE",'')
+	 END) as descripcionMotivoTraslado,
+	'' as indTransbordoProgramado,
+	T0."U_SMC_BULTOS_GRE" as pesoBrutoTotalBienes,
+	T0."U_SMC_UND_MED_GRE" as unidadMedidaPesoBruto,
+	T0."U_SMC_MOD_TRAS"  as modalidadTraslado,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaInicioTraslado,
+	'' as pesoBrutoTotalItem,
+	'' as unidadMedidaPesoBrutoIteml,
+	'' as sustentoPesoBrutoTotal,
+	'' as numeroPrecinto1,
+	'' as numeroContenedor1,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEntregaBienes,
+	--END DATOS DE ENVIO
+
+	--DATOS DE TRANSPORTISTA
+	IFNULL((SELECT "LicTradNum" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as numeroRucTransportista,
+	IFNULL((SELECT "U_EXX_TIPODOCU" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as tipoDocumentoTransportista,
+	IFNULL((SELECT "CardName" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as razonSocialTransportista,
+	'' as numeroRegistroMTC,
+	'' as numeroAutorizacionTrans,
+	'' as codigoAutorizadoTrans,
+	--DATOS DE TRANSPORTISTA
+
+	--DATOS DEL CONDUCTOR
+	IFNULL((SELECT T00."U_SMC_NUMERODOCI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_TIPODOCUI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as tipoDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_NOMBRES" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'')  as nombreConductor,
+	IFNULL((SELECT T00."U_SMC_APELLIDOS" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as apellidoConductor,
+	IFNULL((SELECT T00."U_SMC_LICENCIA" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroLicencia,
+	--END DATOS DEL CONDUCTOR
+
+	--DATOS DEL VEHICULO
+	IFNULL(T0."U_EXX_PLACAVEH",'') as numeroPlacaVehiculoPrin,
+	'' as tarjetaUnicaCirculacionPrin,
+	'' as numeroAutorizacionVehPrin,
+	'' as codigoAutorizadoVehPrin,
+	'' as numeroBulltos,
+	--END DATOS DEL VEHICULO
+
+	--PUNTO LLEGADA
+	"SMC_OBTENERUBIGEO"(T2."CardCode",T0."ShipToCode",'S') as ubigeoPtoLLegada,
+	(SELECT T22."Street" FROM "CRD1" T22 
+	WHERE T22."CardCode"=T2."CardCode"
+	 AND T22."AdresType"='S' AND T22."Address"=T0."ShipToCode") as direccionPtoLLegada,
+	'' as numeroDocumentoPtoLlegada,
+	'' as codigoPtoLlegada,
+	'' as ptoLlegadaLongitud,
+	'' as ptoLlegadaLatitud,
+	--END PUNTO LLEGADA
+
+
+	--PUNTO PARTIDA
+	IFNULL((SELECT "U_SMC_UBIGEO" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as ubigeoPtoPartida,
+	IFNULL((SELECT "U_SMC_DIRECCION" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as direccionPtoPartida,
+	T3."GlblLocNum" as numeroDocumentoPtoPartida,
+	IFNULL((SELECT "U_SMC_CODESTABLE" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as codigoPtoPartida,
+	'' as ptoPartidaLongitud,
+	'' as ptoPartidaLatitud,
+	--END PUNTO PARTIDA
+
+	--DETALLE 
+	'D' as indicador,
+	
+	'' as numeroOrdenItem,
+	T1."Quantity" as Cantidad,
+
+	
+	(CASE 
+	WHEN T0."U_EXX_MOTIVTRA"='09' THEN (SELECT "U_SMC_UND_MED_EXP_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	ELSE ifnull((SELECT "U_SMC_UND_MED_NAC_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr"),T1."unitMsr")
+	END) as unidadMedida,
+	
+	
+	--(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoSUNAT,
+	'' 	as codigoProductoSUNAT,
+	T1."Dscription" as descripcion,
+	T1."ItemCode" as codigo,
+	(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoGS1,
+	--END DETALLE
+
+	'' as FechaEntrega
+	FROM "ODLN" T0
+	INNER JOIN "DLN1" T1 ON T0."DocEntry"=T1."DocEntry"
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_OIGE_GRE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_OIGE_GRE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	'09' as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'jhuniors.ramos@smartcode.pe' as correoEmisor,
+	'jhuniors.ramos@smartcode.pe' as correoAdquiriente,
+	--LPAD('1',8,'0')
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumeroGuia,
+   --ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),5,'0') as serieNumeroGuia,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmisionGuia,
+	--TO_VARCHAR(TO_TIME(T0."CreateTS",'HHMISS')) as horaEmisionGuia,
+	--TO_VARCHAR(CURRENT_DATE,'HHMISS') as horaEmisionGuia,
+	'09:00:00' as horaEmisionGuia,
+	'09' as tipoDocumentoGuia,
+	T0."Comments" AS Observaciones,
+	
+	
+	--DATOS DEL REMITENTE--
+	T3."GlblLocNum" as numeroDocumentoRemitente,
+	'6' as tipoDocumentoRemitente,
+	T3."BPLName" as razonSocialRemitente,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL DESTINATARIO
+	IFNULL(T2."LicTradNum",T3."GlblLocNum") as numeroDocumentoDestinatario,
+	IFNULL(T2."U_EXX_TIPODOCU",'6') as tipoDocumentoDestinatario,
+	IFNULL(T2."CardName",T3."BPLName") as razonSocialDestinatario,
+	--END DATOS DEL DESTINATARIO
+
+	--DATOS DE ENVIO
+	T0."U_EXX_MOTIVTRA" as motivoTraslado,
+	(CASE 
+		WHEN T0."U_EXX_MOTIVTRA"!='13' THEN (SELECT "Name" FROM "@EXX_MOTTRA" WHERE "Code"=T0."U_EXX_MOTIVTRA")
+		ELSE IFNULL(T0."U_SMC_MOTVOTROS_GRE",'')
+	 END) as descripcionMotivoTraslado,
+	'' as indTransbordoProgramado,
+	T0."U_SMC_BULTOS_GRE" as pesoBrutoTotalBienes,
+	T0."U_SMC_UND_MED_GRE" as unidadMedidaPesoBruto,
+	T0."U_SMC_MOD_TRAS"  as modalidadTraslado,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaInicioTraslado,
+	'' as pesoBrutoTotalItem,
+	'' as unidadMedidaPesoBrutoIteml,
+	'' as sustentoPesoBrutoTotal,
+	'' as numeroPrecinto1,
+	'' as numeroContenedor1,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEntregaBienes,
+	--END DATOS DE ENVIO
+
+	--DATOS DE TRANSPORTISTA
+	IFNULL((SELECT "LicTradNum" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as numeroRucTransportista,
+	IFNULL((SELECT "U_EXX_TIPODOCU" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as tipoDocumentoTransportista,
+	IFNULL((SELECT "CardName" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as razonSocialTransportista,
+	'' as numeroRegistroMTC,
+	'' as numeroAutorizacionTrans,
+	'' as codigoAutorizadoTrans,
+	--DATOS DE TRANSPORTISTA
+
+	--DATOS DEL CONDUCTOR
+	IFNULL((SELECT T00."U_SMC_NUMERODOCI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_TIPODOCUI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as tipoDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_NOMBRES" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'')  as nombreConductor,
+	IFNULL((SELECT T00."U_SMC_APELLIDOS" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as apellidoConductor,
+	IFNULL((SELECT T00."U_SMC_LICENCIA" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroLicencia,
+	--END DATOS DEL CONDUCTOR
+
+	--DATOS DEL VEHICULO
+	IFNULL(T0."U_EXX_PLACAVEH",'') as numeroPlacaVehiculoPrin,
+	'' as tarjetaUnicaCirculacionPrin,
+	'' as numeroAutorizacionVehPrin,
+	'' as codigoAutorizadoVehPrin,
+	'' as numeroBulltos,
+	--END DATOS DEL VEHICULO
+
+	--PUNTO LLEGADA
+	"SMC_OBTENERUBIGEO"(T2."CardCode",T0."ShipToCode",'S') as ubigeoPtoLLegada,
+	(SELECT T22."Street" FROM "CRD1" T22 
+	WHERE T22."CardCode"=T2."CardCode"
+	 AND T22."AdresType"='S' AND T22."Address"=T0."ShipToCode") as direccionPtoLLegada,
+	'' as numeroDocumentoPtoLlegada,
+	'' as codigoPtoLlegada,
+	'' as ptoLlegadaLongitud,
+	'' as ptoLlegadaLatitud,
+	--END PUNTO LLEGADA
+
+
+	--PUNTO PARTIDA
+	IFNULL((SELECT "U_SMC_UBIGEO" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as ubigeoPtoPartida,
+	IFNULL((SELECT "U_SMC_DIRECCION" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as direccionPtoPartida,
+	T3."GlblLocNum" as numeroDocumentoPtoPartida,
+	IFNULL((SELECT "U_SMC_CODESTABLE" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as codigoPtoPartida,
+	'' as ptoPartidaLongitud,
+	'' as ptoPartidaLatitud,
+	--END PUNTO PARTIDA
+
+	--DETALLE 
+	'D' as indicador,
+	
+	'' as numeroOrdenItem,
+	T1."Quantity" as Cantidad,
+
+	
+	(CASE 
+	WHEN T0."U_EXX_MOTIVTRA"='09' THEN (SELECT "U_SMC_UND_MED_EXP_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	ELSE (SELECT "U_SMC_UND_MED_NAC_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	END) as unidadMedida,
+	
+	
+	--(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoSUNAT,
+	'' 	as codigoProductoSUNAT,
+	T1."Dscription" as descripcion,
+	T1."ItemCode" as codigo,
+	(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoGS1,
+	--END DETALLE
+
+	'' as FechaEntrega
+	FROM "OIGE" T0
+	INNER JOIN "IGE1" T1 ON T0."DocEntry"=T1."DocEntry"
+	LEFT JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_OINV_GRE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_OINV_GRE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	ifnull(T0."FolioPref",'')||'-'||ifnull(T0."FolioPref",'') as serieNumeroGuia,
+	T0."TaxDate" as fechaEmisionGuia,
+	T0."Indicator" as tipoDocumentoGuia,
+	T0."Comments" AS Observaciones,
+	
+	
+	--DATOS DEL REMITENTE--
+	'' as numeroDocumentoRemitente,
+	'' as tipoDocumentoRemitente,
+	'' as razonSocialRemitente,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL DESTINATARIO
+	'' as numeroDocumentoDestinatario,
+	'' as tipoDocumentoDestinatario,
+	'' as razonSocialDestinatario,
+	--END DATOS DEL DESTINATARIO
+
+	'' as FechaEntrega
+	FROM "ODLN" T0
+	INNER JOIN "DLN1" T1 ON T0."DocEntry"=T1."DocEntry"
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_ORPD_GRE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_ORPD_GRE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	'09' as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'jhuniors.ramos@smartcode.pe' as correoEmisor,
+	'jhuniors.ramos@smartcode.pe' as correoAdquiriente,
+	--LPAD('1',8,'0')
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumeroGuia,
+   --ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),5,'0') as serieNumeroGuia,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmisionGuia,
+	--TO_VARCHAR(TO_TIME(T0."CreateTS",'HHMISS')) as horaEmisionGuia,
+	--TO_VARCHAR(CURRENT_DATE,'HHMISS') as horaEmisionGuia,
+	'09:00:00' as horaEmisionGuia,
+	T0."Indicator" as tipoDocumentoGuia,
+	T0."Comments" AS Observaciones,
+	
+	
+	--DATOS DEL REMITENTE--
+	T3."GlblLocNum" as numeroDocumentoRemitente,
+	'6' as tipoDocumentoRemitente,
+	T3."BPLName" as razonSocialRemitente,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL DESTINATARIO
+	T2."LicTradNum" as numeroDocumentoDestinatario,
+	T2."U_EXX_TIPODOCU" as tipoDocumentoDestinatario,
+	T2."CardName" as razonSocialDestinatario,
+	--END DATOS DEL DESTINATARIO
+
+	--DATOS DE ENVIO
+	T0."U_EXX_MOTIVTRA" as motivoTraslado,
+	(CASE 
+		WHEN T0."U_EXX_MOTIVTRA"!='13' THEN (SELECT "Name" FROM "@EXX_MOTTRA" WHERE "Code"=T0."U_EXX_MOTIVTRA")
+		ELSE IFNULL(T0."U_SMC_MOTVOTROS_GRE",'')
+	 END) as descripcionMotivoTraslado,
+	'' as indTransbordoProgramado,
+	T0."U_SMC_BULTOS_GRE" as pesoBrutoTotalBienes,
+	T0."U_SMC_UND_MED_GRE" as unidadMedidaPesoBruto,
+	T0."U_SMC_MOD_TRAS"  as modalidadTraslado,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaInicioTraslado,
+	'' as pesoBrutoTotalItem,
+	'' as unidadMedidaPesoBrutoIteml,
+	'' as sustentoPesoBrutoTotal,
+	'' as numeroPrecinto1,
+	'' as numeroContenedor1,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEntregaBienes,
+	--END DATOS DE ENVIO
+
+	--DATOS DE TRANSPORTISTA
+	IFNULL((SELECT "LicTradNum" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as numeroRucTransportista,
+	IFNULL((SELECT "U_EXX_TIPODOCU" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as tipoDocumentoTransportista,
+	IFNULL((SELECT "CardName" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as razonSocialTransportista,
+	'' as numeroRegistroMTC,
+	'' as numeroAutorizacionTrans,
+	'' as codigoAutorizadoTrans,
+	--DATOS DE TRANSPORTISTA
+
+	--DATOS DEL CONDUCTOR
+	IFNULL((SELECT T00."U_SMC_NUMERODOCI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_TIPODOCUI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as tipoDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_NOMBRES" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'')  as nombreConductor,
+	IFNULL((SELECT T00."U_SMC_APELLIDOS" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as apellidoConductor,
+	IFNULL((SELECT T00."U_SMC_LICENCIA" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroLicencia,
+	--END DATOS DEL CONDUCTOR
+
+	--DATOS DEL VEHICULO
+	IFNULL(T0."U_EXX_PLACAVEH",'') as numeroPlacaVehiculoPrin,
+	'' as tarjetaUnicaCirculacionPrin,
+	'' as numeroAutorizacionVehPrin,
+	'' as codigoAutorizadoVehPrin,
+	'' as numeroBulltos,
+	--END DATOS DEL VEHICULO
+
+	--PUNTO LLEGADA
+	"SMC_OBTENERUBIGEO"(T2."CardCode",T0."ShipToCode",'S') as ubigeoPtoLLegada,
+	(SELECT T22."Street" FROM "CRD1" T22 
+	WHERE T22."CardCode"=T2."CardCode"
+	 AND T22."AdresType"='S' AND T22."Address"=T0."ShipToCode") as direccionPtoLLegada,
+	'' as numeroDocumentoPtoLlegada,
+	'' as codigoPtoLlegada,
+	'' as ptoLlegadaLongitud,
+	'' as ptoLlegadaLatitud,
+	--END PUNTO LLEGADA
+
+
+	--PUNTO PARTIDA
+	IFNULL((SELECT "U_SMC_UBIGEO" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as ubigeoPtoPartida,
+	IFNULL((SELECT "U_SMC_DIRECCION" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as direccionPtoPartida,
+	T3."GlblLocNum" as numeroDocumentoPtoPartida,
+	IFNULL((SELECT "U_SMC_CODESTABLE" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as codigoPtoPartida,
+	'' as ptoPartidaLongitud,
+	'' as ptoPartidaLatitud,
+	--END PUNTO PARTIDA
+
+	--DETALLE 
+	'D' as indicador,
+	
+	'' as numeroOrdenItem,
+	T1."Quantity" as Cantidad,
+
+	
+	(CASE 
+	WHEN T0."U_EXX_MOTIVTRA"='09' THEN (SELECT "U_SMC_UND_MED_EXP_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	ELSE (SELECT "U_SMC_UND_MED_NAC_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	END) as unidadMedida,
+	
+	
+	--(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoSUNAT,
+	'' 	as codigoProductoSUNAT,
+	T1."Dscription" as descripcion,
+	T1."ItemCode" as codigo,
+	(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoGS1,
+	--END DETALLE
+
+	'' as FechaEntrega
+	FROM "ORPD" T0
+	INNER JOIN "RPD1" T1 ON T0."DocEntry"=T1."DocEntry"
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_OWTR_GRE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_OWTR_GRE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+
+BEGIN
+	SELECT
+	T3."GlblLocNum" as idEmisor,
+	'09' as tipoDocumento,
+	T0."FolioPref" as Serie,
+	T0."FolioNum"  as Correlativo,
+	'jhuniors.ramos@smartcode.pe' as correoEmisor,
+	'jhuniors.ramos@smartcode.pe' as correoAdquiriente,
+	--LPAD('1',8,'0')
+	ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),8,'0') as serieNumeroGuia,
+   --ifnull(T0."FolioPref",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."FolioNum"),''),5,'0') as serieNumeroGuia,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmisionGuia,
+	--TO_VARCHAR(TO_TIME(T0."CreateTS",'HHMISS')) as horaEmisionGuia,
+	--TO_VARCHAR(CURRENT_DATE,'HHMISS') as horaEmisionGuia,
+	'09:00:00' as horaEmisionGuia,
+	--T0."Indicator" as tipoDocumentoGuia,
+	'09' as tipoDocumentoGuia,
+	T0."Comments" AS Observaciones,
+	
+	
+	--DATOS DEL REMITENTE--
+	T3."GlblLocNum" as numeroDocumentoRemitente,
+	'6' as tipoDocumentoRemitente,
+	T3."BPLName" as razonSocialRemitente,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END DATOS DEL REMITENTE
+
+	--DATOS DEL DESTINATARIO
+	IFNULL(T2."LicTradNum",T3."GlblLocNum") as numeroDocumentoDestinatario,
+	IFNULL(T2."U_EXX_TIPODOCU",6) as tipoDocumentoDestinatario,
+	IFNULL(T2."CardName",T3."BPLName") as razonSocialDestinatario,
+	--END DATOS DEL DESTINATARIO
+
+	--DATOS DE ENVIO
+	T0."U_EXX_MOTIVTRA" as motivoTraslado,
+	(CASE 
+		WHEN T0."U_EXX_MOTIVTRA"!='13' THEN (SELECT "Name" FROM "@EXX_MOTTRA" WHERE "Code"=T0."U_EXX_MOTIVTRA")
+		ELSE IFNULL(T0."U_SMC_MOTVOTROS_GRE",'')
+	 END) as descripcionMotivoTraslado,
+	'' as indTransbordoProgramado,
+	T0."U_SMC_BULTOS_GRE" as pesoBrutoTotalBienes,
+	T0."U_SMC_UND_MED_GRE" as unidadMedidaPesoBruto,
+	T0."U_SMC_MOD_TRAS"  as modalidadTraslado,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaInicioTraslado,
+	'' as pesoBrutoTotalItem,
+	'' as unidadMedidaPesoBrutoIteml,
+	'' as sustentoPesoBrutoTotal,
+	'' as numeroPrecinto1,
+	'' as numeroContenedor1,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEntregaBienes,
+	--END DATOS DE ENVIO
+
+	--DATOS DE TRANSPORTISTA
+	IFNULL((SELECT "LicTradNum" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as numeroRucTransportista,
+	IFNULL((SELECT "U_EXX_TIPODOCU" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as tipoDocumentoTransportista,
+	IFNULL((SELECT "CardName" FROM "OCRD" T00 WHERE T00."CardCode"=T0."U_EXX_CODTRANS"),'') as razonSocialTransportista,
+	'' as numeroRegistroMTC,
+	'' as numeroAutorizacionTrans,
+	'' as codigoAutorizadoTrans,
+	--DATOS DE TRANSPORTISTA
+
+	--DATOS DEL CONDUCTOR
+	IFNULL((SELECT T00."U_SMC_NUMERODOCI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_TIPODOCUI" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as tipoDocumentoConductor,
+	IFNULL((SELECT T00."U_SMC_NOMBRES" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'')  as nombreConductor,
+	IFNULL((SELECT T00."U_SMC_APELLIDOS" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as apellidoConductor,
+	IFNULL((SELECT T00."U_SMC_LICENCIA" FROM "@SMC_CONDUCTOR_GRE" T00 WHERE T00."Code"=T0."U_SMC_CONDUCTOR_GRE"),'') as numeroLicencia,
+	--END DATOS DEL CONDUCTOR
+
+	--DATOS DEL VEHICULO
+	IFNULL(T0."U_EXX_PLACAVEH",'') as numeroPlacaVehiculoPrin,
+	'' as tarjetaUnicaCirculacionPrin,
+	'' as numeroAutorizacionVehPrin,
+	'' as codigoAutorizadoVehPrin,
+	'' as numeroBulltos,
+	--END DATOS DEL VEHICULO
+
+	--PUNTO LLEGADA
+	"SMC_OBTENERUBIGEO"(T2."CardCode",T0."ShipToCode",'S') as ubigeoPtoLLegada,
+	(SELECT T22."Street" FROM "CRD1" T22 
+	WHERE T22."CardCode"=T2."CardCode"
+	 AND T22."AdresType"='S' AND T22."Address"=T0."ShipToCode") as direccionPtoLLegada,
+	'' as numeroDocumentoPtoLlegada,
+	'' as codigoPtoLlegada,
+	'' as ptoLlegadaLongitud,
+	'' as ptoLlegadaLatitud,
+	--END PUNTO LLEGADA
+
+
+	--PUNTO PARTIDA
+	IFNULL((SELECT "U_SMC_UBIGEO" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as ubigeoPtoPartida,
+	IFNULL((SELECT "U_SMC_DIRECCION" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as direccionPtoPartida,
+	T3."GlblLocNum" as numeroDocumentoPtoPartida,
+	IFNULL((SELECT "U_SMC_CODESTABLE" FROM "@SMC_GRE_LUGAREMP" T00 WHERE T00."Code"=T0."U_SMC_LUGARPAR_GRE"),'') as codigoPtoPartida,
+	'' as ptoPartidaLongitud,
+	'' as ptoPartidaLatitud,
+	--END PUNTO PARTIDA
+
+	--DETALLE 
+	'D' as indicador,
+	
+	'' as numeroOrdenItem,
+	T1."Quantity" as Cantidad,
+
+	
+	(CASE 
+	WHEN T0."U_EXX_MOTIVTRA"='09' THEN (SELECT "U_SMC_UND_MED_EXP_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	ELSE (SELECT "U_SMC_UND_MED_NAC_GRE" FROM "@SMC_UNID_MED_CPE" WHERE "U_SMC_UNIDAD_MEDIDA_SAP"=T1."unitMsr")
+	END) as unidadMedida,
+	
+	
+	--(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoSUNAT,
+	'' 	as codigoProductoSUNAT,
+	T1."Dscription" as descripcion,
+	T1."ItemCode" as codigo,
+	(SELECT IFNULL("U_EXI_SUBFAM",'') FROM "OITM" WHERE "ItemCode"=T1."ItemCode") as codigoProductoGS1,
+	--END DETALLE
+
+	'' as FechaEntrega
+	FROM "OWTR" T0
+	INNER JOIN "WTR1" T1 ON T0."DocEntry"=T1."DocEntry"
+	LEFT JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_RETENCION_DETALLE_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_RETENCION_DETALLE_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+BEGIN
+	DECLARE FechaPago DATE;
+	DECLARE TipoCambio DECIMAL;
+	
+	SELECT 
+	"TaxDate" into FechaPago
+	FROM "OVPM" T0 WHERE "DocEntry"=DocEntry;
+	
+	select "Rate" into TipoCambio FROM "ORTT" WHERE "Currency"='USD' and "RateDate"=FechaPago;
+	SELECT 
+	0 as numeroOrdenItem,
+	--ifnull(T4."FolioPref",'')
+	'F001'||'-'|| LPAD(ifnull(TO_VARCHAR(T4."FolioNum"),''),8,'0') as numeroDocumentoRelacionado,	
+
+	TO_VARCHAR(T4."TaxDate",'yyyy-MM-dd') as fechaEmisionDocumentoRelacionado,
+	'01' as tipoDocumentoRelacionado,
+	(CASE WHEN T4."DocCur"='SOL' THEN T4."DocTotal" ELSE T4."DocTotalFC" END) as importeTotalDocumentoRelacionado,
+	(CASE WHEN T4."DocCur"='SOL' THEN 'PEN' ELSE 'USD' END)  as tipoMonedaDocumentoRelacionado,
+	--TO_VARCHAR(T4."TaxDate",'yyyy-MM-dd')  as fechaPago,
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd')  as fechaPago,
+	T1."InstId" as numeroPago,
+	
+	(CASE WHEN T4."DocCur"='SOL' THEN (T1."WtAppld"+T1."BfDcntSum") ELSE (T1."WtAppldFC"+T1."BfDcntSumF") END)
+	 as importePagoSinRetencion,
+	
+	--'PEN' as monedaPago,
+
+	(CASE WHEN T4."DocCur"='SOL' THEN 'PEN' ELSE 'USD' END) as monedaPago,
+	
+	T1."WtAppld" as importeRetenido,
+	
+	'PEN' as monedaImporteRetenido,
+	TO_VARCHAR(FechaPago,'yyyy-MM-dd') as fechaRetencion,
+	T1."BfDcntSum" as importeTotalPagarNeto,
+	'PEN' as monedaMontoNetoPagado,
+	--'PEN' as monedaReferenciaTipoCambio,
+	(CASE WHEN T4."DocCur"='SOL' THEN 'PEN' ELSE 'USD' END) as monedaReferenciaTipoCambio,
+	'PEN' as monedaObjetivoTasaCambio,
+	(CASE WHEN T4."DocCur"='SOL' THEN 1 ELSE TipoCambio END) as factorTipoCambioMoneda,
+	TO_VARCHAR(FechaPago,'yyyy-MM-dd') as fechaCambio
+	FROM "OVPM" T0 
+	inner join "VPM2" T1 ON T0."DocEntry"=T1."DocNum"
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	INNER JOIN "OPCH" T4 ON T4."DocEntry"=T1."DocEntry" AND T1."InvType"='18'
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_RETENCION_FE" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_RETENCION_FE"
+(
+	IN DocEntry INT	-- Error string to be displayed
+)
+LANGUAGE SQLSCRIPT AS
+BEGIN
+
+	SELECT 
+	T3."GlblLocNum" as idEmisor,
+	20 as tipoDocumento,
+	T0."U_SMC_SERIE_FE" as Serie,
+	T0."U_SMC_NUM_FE"  as Correlativo,
+	'richard.tito@imagina.pe' as correoEmisor,
+	T2."E_Mail" as correoAdquiriente,
+	
+	
+	ifnull(T0."U_SMC_SERIE_FE",'')||'-'|| LPAD(ifnull(TO_VARCHAR(T0."U_SMC_NUM_FE"),''),8,'0') as serieNumeroRetencion,	
+	TO_VARCHAR(T0."TaxDate",'yyyy-MM-dd') as fechaEmision,
+	20 as tipoDocumento,
+	
+	--EMISOR
+	T3."GlblLocNum" as numeroDocumentoEmisor,
+	'6' as tipoDocumentoEmisor,
+	T3."BPLName" as nombreComercialEmisor,
+	T3."BPLName" as razonSocialEmisor,
+	T3."AddrType"||' '||T3."Street" ||' '||T3."StreetNo"||' '||T3."Building"   as direccionEmisor,
+	'' as urbanizacionEmisor,
+	T3."ZipCode" as ubigeoEmisor,
+	T3."City" as departamentoEmisor, --MODIFICAR
+	T3."City" as provinciaEmisor,
+	T3."County" as distritoEmisor,
+	T3."Country" as codigoPaisEmisor,
+	'0000' as codigoLocalAnexoEmisor,
+	'' as numeroAutorizacionRem,
+	'' as codigoAutorizadoRem,
+	--END EMISOR
+	
+	--PROVEEDOR
+	T2."LicTradNum" as numeroDocumentoProveedor,
+	T2."U_EXX_TIPODOCU"  as tipoDocumentoProveedor,
+	T2."CardName" as razonSocialProveedor,
+	T2."CardName" as nombreComercialProveedor,
+	'' as ubigeoProveedor,
+	IFNULL((SELECT MAX(T00."Street") FROM "CRD1" T00 WHERE T00."CardCode"=T2."CardCode" AND T00."AdresType"='B'),'') as direccionProveedor,
+	--'' as direccionProveedor,
+	'' as urbanizacionProveedor,
+	'' as provinciaProveedor,
+	'' as departamentoProveedor,
+	'' as distritoProveedor,
+	'' as codigoPaisProveedor,
+	--END PROVEEDOR
+	
+	--DATOS DE RETENCION
+	'01' as regimenRetencion,
+	'3.00' as tasaRetencion,
+	'' as observaciones,
+	0 as importeTotalRetenido,
+	'PEN' as tipoMonedaTotalRetenido,
+	0 as importeTotalPagado,
+	'PEN' as tipoMonedaTotalPagado
+	--END DATOS DE RETENCION
+	
+	
+	FROM "OVPM" T0 
+	INNER JOIN "OCRD" T2 ON T0."CardCode"=T2."CardCode"
+	INNER JOIN "OBPL" T3 ON T0."BPLId"=T3."BPLId"
+	WHERE T0."DocEntry"=DocEntry;
+END</value>
+  </data>
+  <data name="SMC_Validar_FELFolioFactAnt" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Validar_FELFolioFactAnt" 
+(
+	
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+AS 
+
+BEGIN 
+
+	SELECT IFNULL("FolioNum", '0') AS "FolioNum" FROM "ODPI" WHERE 
+	"Indicator" = :TipoDoc AND "DocEntry" = :DocEntry 
+	AND "ObjType" = :ObjectType;
+END;</value>
+  </data>
+  <data name="SMC_Validar_FELFolioOINV" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Validar_FELFolioOINV" 
+(
+	
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+AS 
+
+BEGIN 
+
+	SELECT IFNULL("FolioNum", '0') AS "FolioNum" FROM "OINV" WHERE 
+	"Indicator" = :TipoDoc AND "DocEntry" = :DocEntry 
+	AND "ObjType" = :ObjectType;
+END;</value>
+  </data>
+  <data name="SMC_Validar_FELFolioORIN" xml:space="preserve">
+    <value>CREATE PROCEDURE "SMC_Validar_FELFolioORIN" 
+(
+	
+	IN DocEntry INT,
+	IN ObjectType varchar(5),
+	IN TipoDoc varchar(10)
+) 
+AS 
+
+BEGIN 
+
+	SELECT IFNULL("FolioNum", '0') AS "FolioNum" FROM "ORIN" WHERE 
+	"Indicator" = :TipoDoc AND "DocEntry" = :DocEntry 
+	AND "ObjType" = :ObjectType;
+END;</value>
+  </data>
+</root>

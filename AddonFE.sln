@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddonFE", "AddonFE\AddonFE.csproj", "{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Debug|x64.ActiveCfg = Debug|x64
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Debug|x64.Build.0 = Debug|x64
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Release|x64.ActiveCfg = Release|x64
+		{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77BBBD4D-2542-466C-BA00-9718CE106EF6}
+	EndGlobalSection
+EndGlobal

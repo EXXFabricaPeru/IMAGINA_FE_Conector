@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|c:\\exx_dev\\addon conector fe\\imagina-addonfe-main\\addonfe\\main\\facturasap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\main\\facturasap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\dao\\retenciondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\dao\\retenciondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\dto\\retenciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\dto\\retenciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\dao\\facturadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\dao\\facturadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\util.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\util.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\addonfe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{743B32F5-4585-4B87-A0CB-BAEFB1B198BD}|AddonFE\\AddonFE.csproj|solutionrelative:addonfe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FacturaDAO.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "RelativeDocumentMoniker": "AddonFE\\DAO\\FacturaDAO.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "RelativeToolTip": "AddonFE\\DAO\\FacturaDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwJUDAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:51:22.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RetencionDAO.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\RetencionDAO.cs",
+              "RelativeDocumentMoniker": "AddonFE\\DAO\\RetencionDAO.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\RetencionDAO.cs",
+              "RelativeToolTip": "AddonFE\\DAO\\RetencionDAO.cs",
+              "ViewState": "AQIAAG4AAACAmZmZmZklwEQAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T18:20:02.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Util.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Util.cs",
+              "RelativeDocumentMoniker": "AddonFE\\Util.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Util.cs",
+              "RelativeToolTip": "AddonFE\\Util.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T21:33:27.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FacturaDAO.cs",
+              "DocumentMoniker": "C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "ToolTip": "C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "RelativeToolTip": "..\\..\\..\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\DAO\\FacturaDAO.cs",
+              "ViewState": "AQIAADMBAAAAAAAAAAAMwEcBAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T20:43:39.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\App.config",
+              "RelativeDocumentMoniker": "AddonFE\\App.config",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\App.config",
+              "RelativeToolTip": "AddonFE\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-05T21:55:53.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FacturaSAP.cs",
+              "DocumentMoniker": "C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "ToolTip": "C:\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "RelativeToolTip": "..\\..\\..\\SMC\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "ViewState": "AQIAAPUFAAAAAAAAAAAkwA0GAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T21:53:12.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FacturaSAP.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "RelativeDocumentMoniker": "AddonFE\\Main\\FacturaSAP.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Main\\FacturaSAP.cs",
+              "RelativeToolTip": "AddonFE\\Main\\FacturaSAP.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAqwEQCAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T21:49:58.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RetencionDTO.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DTO\\RetencionDTO.cs",
+              "RelativeDocumentMoniker": "AddonFE\\DTO\\RetencionDTO.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\DTO\\RetencionDTO.cs",
+              "RelativeToolTip": "AddonFE\\DTO\\RetencionDTO.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAlwI8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:52:50.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Menu.cs",
+              "RelativeDocumentMoniker": "AddonFE\\Menu.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Menu.cs",
+              "RelativeToolTip": "AddonFE\\Menu.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAwwAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:52:31.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Program.cs",
+              "RelativeDocumentMoniker": "AddonFE\\Program.cs",
+              "ToolTip": "C:\\EXX_DEV\\Addon Conector FE\\IMAGINA-AddonFE-main\\AddonFE\\Program.cs",
+              "RelativeToolTip": "AddonFE\\Program.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAAFMAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T21:50:15.276Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
